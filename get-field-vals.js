@@ -1,49 +1,33 @@
 $(document).ready(function() {
-  // Function to get input value.
+  //function to get input value
   $('#text_value').click(function() {
     var text_value = $("#text").val();
     if(text_value=='') {
-    alert("Enter Some Text In Input Field");
-    }else{
-    alert(text_value);
-    }
+  	   alert("Enter Some Text In Input Field");
+  	}
+    else{
+  		//$('.display').append(text_value);
+      var whichWeather = text_value;
+      var appId = '6ba9fe7b01ace29efd87f6336dcd299b';
+
+      var weatherUrl = 'http://api.openweathermap.org/data/2.5/weather?q='+whichWeather+'&appid='+appId+'';
+
+      $.getJSON(weatherUrl, function(data){
+        $('.temp-city').html(data.name);
+        $('.temp-country').html(data.weather);
+      });
+
+      $('#text_reset').click(function() {
+    	  $('#text').val('');
+        weatherUrl.val('');
+        //$('.display').html('');
+      });
+  	}
   });
 
-  $('#text_reset').click(function() {
-    $("#text").val('');
+  var url ="http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=6ba9fe7b01ace29efd87f6336dcd299b"
+  $.getJSON(url, function(data){
+    console.log(data.weather[1]);
   });
 
-  // Function to get checked radio's value.
-  $('#radio_value').click(function() {
-    $('#result').empty();
-      var value = $("form input[type='radio']:checked").val();
-      if($("form input[type='radio']").is(':checked')) {
-        $('#result').append("Checked Radio Button Value is :<span> "+ value +" </span>");
-      }else{
-        alert(" Please Select any Option ");
-      }
-  });
-
-  // Get value Onchange radio function.
-  $('input:radio').change(function(){
-  var value = $("form input[type='radio']:checked").val();
-  alert("Value of Changed Radio is : " +value);
-  });
-  // Funtion to reset or clear selection.
-  $('#radio_reset').click(function() {
-  $('#result').empty();
-  $("input:radio").attr("checked", false);
-  });
-  // To get value of textarea.
-  $('#textarea_value').click(function() {
-  var textarea_value = $("#textarea").val();
-  if(textarea_value=='') {
-  alert("Enter Some Text In Textarea");
-  }else{
-  alert(textarea_value);
-  }
-  });
-  $('#textarea_reset').click(function() {
-  $("textarea").val('');
-  });
 });

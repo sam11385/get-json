@@ -4,55 +4,50 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<title>Get All JSON</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
 		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 		<script src="get-field-vals.js"></script>
 	</head>
 	<body>
 
-		<script>
-
-		$(document).ready(function() {
 
 
-			// var url = 'http://ipinfo.io';
-			//
-			// $.getJSON(url, function(data){
-			// 	$('.loc').html(data.city);
-			// 	$('.state').html(data.region);
-			// 	$('.country').html(data.country);
-			// 	$('.zip').html(data.postal);
-			// });
+		<div class="container">
 
-			var whichWeather = 'pittsburgh';
-			var appId = '6ba9fe7b01ace29efd87f6336dcd299b';
 
-			var weatherUrl = 'http://api.openweathermap.org/data/2.5/weather?q='+whichWeather+'&appid='+appId+'';
+			<!-- <div class="loc"></div>
+			<div class="state"></div>
+			<div class="country"></div>
+			<div class="zip"></div> -->
 
-			$.getJSON(weatherUrl, function(data){
-				$('.temp').html(data.name);
-			});
+			<form action="">
 
-			$('#name').keydown(function () {
-			  $('#display').text($(this).val());
-			});
+				<label>Input :</label><br>
+				<input type="text" id="text" name="name" value="">
 
-		});
+        <input type="button" id="text_value" value="Get Value">
+        <input type="button" id="text_reset" value=" Reset ">
+
+			</form>
+
+			<div class="display"></div>
+
+
+			<!-- <input type="text" id="name" />
 
 
 
 
-		</script>
 
+			<span id="display"></span> -->
 
-		<!-- <div class="loc"></div>
-		<div class="state"></div>
-		<div class="country"></div>
-		<div class="zip"></div> -->
+			<div class="entered"></div>
 
-		<input type="text" id="name" />
-		<span id="display"></span>
+			<div class="temp-city"></div>
+			<div class="temp-country"></div>
 
-		<div class="temp"></div>
+		</div>
+
 
 	</body>
 </html>
