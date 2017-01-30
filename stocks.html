@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>DKS Stock</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	</head>
+	<style>
+		.container {
+			max-width: 1200px;
+		}
+
+		.card {
+			text-align: center;
+			border: 1px solid #f1f1f1;
+      border-radius: 1px;
+      padding: 2% 0;
+      box-shadow: 1px 1px 2px #ccc;
+		}
+	</style>
+
+	<body>
+
+	<div class="container">
+		<div class="row">
+			<div class="card twelve columns">
+				<h3></h3>
+				<div class="dks-name">Name: </div>
+        <div class="dks-symbol">Symbol: </div>
+        <div class="dks-price">Latest Price: </div>
+        <div class="dks-ytd">Change Year to Date: </div>
+        <div class="dks-high">Today's High: </div>
+        <div class="dks-low">Today's Low: </div>
+        <div class="dks-open">Today's Opening Price: </div>
+			</div>
+
+		</div>
+	</div>
+
+
+	<script>
+
+  $(document).ready(function() {
+
+    var dksStock = 'http://dev.markitondemand.com/MODApis/Api/v2/Quote/jsonp?symbol=DKS&callback=?';
+
+  	$.getJSON(dksStock, function(data){
+      $('.dks-name').append('<div>'+data.Name+'</div>');
+      $('.dks-symbol').append('<div>'+data.Symbol+'</div>');
+      $('.dks-price').append('<div>'+data.LastPrice+'</div>');
+      $('.dks-ytd').append('<div>'+data.ChangeYTD+'</div>');
+      $('.dks-high').append('<div>'+data.High+'</div>');
+      $('.dks-low').append('<div>'+data.Low+'</div>');
+      $('.dks-open').append('<div>'+data.Open+'</div>');
+  	});
+
+  });
+
+	</script>
+
+  </body>
+</html>
