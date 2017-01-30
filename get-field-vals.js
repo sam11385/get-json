@@ -24,18 +24,12 @@ $(document).ready(function() {
       		var temperature = data.main.temp.toFixed(0);
           $('.temp-temp').html((temperature - 273) * 9 / 5 + 32);
       	}
-
-        $('#text_reset').click(function() {
-      	  $('#text').val('');
-          weatherUrl.val('');
-        });
-
       });
 
-      // $('#text_reset').click(function() {
-    	//   $('#text').val('');
-      //   weatherUrl.val('');
-      // });
+      $('#text_reset').click(function() {
+    	  $('#text').val('');
+        //weatherUrl.val('');
+      });
   	}
   });
 });
