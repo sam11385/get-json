@@ -19,10 +19,19 @@
 			border-radius: 4px;
 			padding: 2% 0;
 		}
+
+		h3{
+			text-align: center;
+		}
 	</style>
 	<body>
 
 	<div class="container">
+		<div class="row">
+			<div class="twelve columns">
+				<h3>Blue Sombrero Headquarters Location Weather Information</h3>
+			</div>
+		</div>
 		<div class="row">
 			<div class="card four columns atl">
 				<h3>Atlanta</h3>
@@ -44,8 +53,8 @@
 
 	<script>
 	var atlWx = 'http://api.openweathermap.org/data/2.5/weather?zip=30307,us&appid=6ba9fe7b01ace29efd87f6336dcd299b';
-	var dsgWx = 'http://api.openweathermap.org/data/2.5/weather?zip=15108,us&appid=6ba9fe7b01ace29efd87f6336dcd299b';
-	var suratWx = 'http://api.openweathermap.org/data/2.5/weather?q=Surat&appid=6ba9fe7b01ace29efd87f6336dcd299b';
+	var pitWx = 'http://api.openweathermap.org/data/2.5/weather?zip=15108,us&appid=6ba9fe7b01ace29efd87f6336dcd299b';
+	var surWx = 'http://api.openweathermap.org/data/2.5/weather?q=Surat&appid=6ba9fe7b01ace29efd87f6336dcd299b';
 
 	var atlTempDiv = '.atl .temp span';
 	var atlWxDiv = '.atl .wx span';
@@ -67,6 +76,36 @@
 			var id = data.weather[i].main;
 			var name = data.weather[i].description;
 			$(atlWxDiv).html(id);
+		}
+
+	});
+
+	$.getJSON(pitWx, function(data){
+
+		for ( var i in data.main) {
+			var temperature = data.main.temp.toFixed(0);
+			$(pitTempDiv).html((temperature - 273) * 9 / 5 + 32);
+		}
+
+		for ( var i in data.weather) {
+			var id = data.weather[i].main;
+			var name = data.weather[i].description;
+			$(pitWxDiv).html(id);
+		}
+
+	});
+
+	$.getJSON(surWx, function(data){
+
+		for ( var i in data.main) {
+			var temperature = data.main.temp.toFixed(0);
+			$(surTempDiv).html((temperature - 273) * 9 / 5 + 32);
+		}
+
+		for ( var i in data.weather) {
+			var id = data.weather[i].main;
+			var name = data.weather[i].description;
+			$(surWxDiv).html(id);
 		}
 
 	});
