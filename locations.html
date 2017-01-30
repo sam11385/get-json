@@ -17,7 +17,7 @@
 			text-align: center;
 			border: 1px solid #f1f1f1;
 			border-radius: 4px;
-			padding-top: 2%;
+			padding: 2% 0;
 		}
 	</style>
 	<body>
@@ -31,8 +31,8 @@
 			</div>
 			<div class="card four columns">
 				<h3>Pittsburgh</h3>
-				<div class="pitt-temp"></div>
-				<div class="pitt-wx"></div>
+				<div class="pit-temp"></div>
+				<div class="pit-wx"></div>
 			</div>
 			<div class="card four columns">
 				<h3>Surat</h3>
@@ -48,7 +48,7 @@
 	var dsgWx = 'http://api.openweathermap.org/data/2.5/weather?q=coraopolis&appid=6ba9fe7b01ace29efd87f6336dcd299b';
 	var suratWx = 'http://api.openweathermap.org/data/2.5/weather?q=Surat&appid=6ba9fe7b01ace29efd87f6336dcd299b';
 
-	
+
 
 	$.getJSON(atlWx, function(data){
 
