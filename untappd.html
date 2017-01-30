@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>Krog Beer List</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	</head>
+	<style>
+		.container {
+			max-width: 1200px;
+		}
+
+		.card {
+			text-align: center;
+			border: 1px solid #f1f1f1;
+			border-radius: 4px;
+			padding: 2% 0;
+		}
+	</style>
+	<body>
+
+	<div class="container"></div>
+
+
+  <script>
+    $(document).ready(function() {
+
+      var clientID = 'D1C13DA98E330A6FD9AAD37DC58DF08D4A059662';
+      var clientSecret = 'F07A0A01CA9E422EACAA3FD083519F8F27C0CACB';
+      var venueID = '2354801';
+
+      var url = 'https://api.untappd.com/v4/venue/info/'+venueID+'?client_id='+clientID+'&client_secret='+clientSecret+'';
+
+      $.getJSON(url, function(data){
+
+        console.log(data.response);
+        console.log(data.response.venue.media);
+    	});
+
+    });
+  </script>
+
+  </body>
+</html>

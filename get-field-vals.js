@@ -14,13 +14,13 @@ $(document).ready(function() {
       $.getJSON(weatherUrl, function(data){
         $('.temp-city').html(data.name);
 
-        for ( var i in data.weather) {
+        for (var i in data.weather) {
       		var id = data.weather[i].main;
       		var name = data.weather[i].description;
       		$('.temp-weather').html(id);
       	}
 
-        for ( var i in data.main) {
+        for (var i in data.main) {
       		var temperature = data.main.temp.toFixed(0);
           $('.temp-temp').html((temperature - 273) * 9 / 5 + 32);
       	}
@@ -28,7 +28,6 @@ $(document).ready(function() {
 
       $('#text_reset').click(function() {
     	  $('#text').val('');
-        //weatherUrl.val('');
       });
   	}
   });

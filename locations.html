@@ -24,20 +24,20 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="card four columns">
+			<div class="card four columns atl">
 				<h3>Atlanta</h3>
-				<div class="atl-temp">Temperature: <span></span>&deg;</div>
-				<div class="atl-wx">Weather: <span></span></div>
+				<div class="temp">Temperature: <span></span>&deg;</div>
+				<div class="wx">Weather: <span></span></div>
 			</div>
-			<div class="card four columns">
+			<div class="card four columns pit">
 				<h3>Pittsburgh</h3>
-				<div class="pit-temp">Temperature: <span></span>&deg;</div>
-				<div class="pit-wx">Weather: <span></span></div>
+				<div class="temp">Temperature: <span></span>&deg;</div>
+				<div class="wx">Weather: <span></span></div>
 			</div>
-			<div class="card four columns">
+			<div class="card four columns sur">
 				<h3>Surat</h3>
-				<div class="sur-temp">Temperature: <span></span>&deg;</div>
-				<div class="sur-wx">Weather: <span></span></div>
+				<div class="temp">Temperature: <span></span>&deg;</div>
+				<div class="wx">Weather: <span></span></div>
 			</div>
 		</div>
 	</div>
@@ -47,17 +47,26 @@
 	var dsgWx = 'http://api.openweathermap.org/data/2.5/weather?zip=15108,us&appid=6ba9fe7b01ace29efd87f6336dcd299b';
 	var suratWx = 'http://api.openweathermap.org/data/2.5/weather?q=Surat&appid=6ba9fe7b01ace29efd87f6336dcd299b';
 
+	var atlTempDiv = '.atl .temp span';
+	var atlWxDiv = '.atl .wx span';
+
+	var pitTempDiv = '.pit .temp span';
+	var pitWxDiv = '.pit .wx span';
+
+	var surTempDiv = '.sur .temp span';
+	var surWxDiv = '.sur .wx span';
+
 	$.getJSON(atlWx, function(data){
 
 		for ( var i in data.main) {
 			var temperature = data.main.temp.toFixed(0);
-			$('.atl-temp span').html((temperature - 273) * 9 / 5 + 32);
+			$(atlTempDiv).html((temperature - 273) * 9 / 5 + 32);
 		}
 
 		for ( var i in data.weather) {
 			var id = data.weather[i].main;
 			var name = data.weather[i].description;
-			$('.atl-wx span').html(id);
+			$(atlWxDiv).html(id);
 		}
 
 	});
