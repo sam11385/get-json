@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>Get All JSON</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+		<script src="get-field-vals.js"></script>
+	</head>
+	<style>
+		.container {
+			max-width: 1200px;
+		}
+
+		.card {
+			text-align: center;
+			border: 1px solid #f1f1f1;
+			border-radius: 4px;
+			padding-top: 2%;
+		}
+	</style>
+	<body>
+
+	<div class="container">
+		<div class="row">
+			<div class="card four columns">
+				<h3>Atlanta</h3>
+				<div class="atl-temp">Temperature: <span></span></div>
+				<div class="atl-wx">Weather: <span></span></div>
+			</div>
+			<div class="card four columns">
+				<h3>Pittsburgh</h3>
+				<div class="pitt-temp"></div>
+				<div class="pitt-wx"></div>
+			</div>
+			<div class="card four columns">
+				<h3>Surat</h3>
+				<div class="sur-temp"></div>
+				<div class="sur-wx"></div>
+			</div>
+		</div>
+	</div>
+
+
+	<script>
+	var atlWx = 'http://api.openweathermap.org/data/2.5/weather?q=atlanta&appid=6ba9fe7b01ace29efd87f6336dcd299b';
+	var dsgWx = 'http://api.openweathermap.org/data/2.5/weather?q=coraopolis&appid=6ba9fe7b01ace29efd87f6336dcd299b';
+	var suratWx = 'http://api.openweathermap.org/data/2.5/weather?q=Surat&appid=6ba9fe7b01ace29efd87f6336dcd299b';
+
+	
+
+	$.getJSON(atlWx, function(data){
+
+		for ( var i in data.main) {
+			var temperature = data.main.temp.toFixed(0);
+			$('.atl-temp span').html((temperature - 273) * 9 / 5 + 32);
+		}
+
+		for ( var i in data.weather) {
+			var id = data.weather[i].main;
+			var name = data.weather[i].description;
+			$('.atl-wx span').html(id);
+		}
+
+	});
+
+	</script>
+
+  </body>
+</html>

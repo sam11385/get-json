@@ -3,7 +3,7 @@ $(document).ready(function() {
   $('#text_value').click(function() {
     var text_value = $("#text").val();
     if(text_value=='') {
-  	   alert("Enter Some Text In Input Field");
+  	   alert("Enter A City In Input Field");
   	}
     else{
       var whichWeather = text_value;
