@@ -27,19 +27,12 @@
     var zomUrl = 'https://developers.zomato.com/api/v2.1/search?entity_type=city&q=atlanta&apikey=2baec02eae04283237c811b12ea1c01e';
 
   	$.getJSON(zomUrl, function(data){
-      //console.log(data.restaurants);
-
       for ( var i in data.restaurants) {
-  			// var id = data.restaurants[i].restaurant.R.res_id;
-        // console.log(id);
-
         var resRate = data.restaurants[i].restaurant.user_rating.rating_text;
         var resName = data.restaurants[i].restaurant.name;
         var hood = data.restaurants[i].restaurant.location.locality;
         $('.restaurants').append('<div>'+resName+' (' + hood + ') <span>Rating: ' + resRate + '</span></div>');
   		}
-
-
   	});
 
 
