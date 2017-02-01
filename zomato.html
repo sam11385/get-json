@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>Get Zomato Restaurant Info</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+		<link rel="stylesheet" href="styles.css">
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	</head>
+	<body>
+
+	<div class="container">
+		<div class="row">
+			<div class="twelve columns">
+				<div class="word"><a href="https://www.zomato.com" target="_blank">Zomato</a></div>
+        <div class="restaurants"></div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+
+  $(document).ready(function(){
+
+    zomKey = '2baec02eae04283237c811b12ea1c01e'
+    var zomUrl = 'https://developers.zomato.com/api/v2.1/search?entity_type=city&q=atlanta&apikey=2baec02eae04283237c811b12ea1c01e';
+
+  	$.getJSON(zomUrl, function(data){
+      //console.log(data.restaurants);
+
+      for ( var i in data.restaurants) {
+  			// var id = data.restaurants[i].restaurant.R.res_id;
+        // console.log(id);
+
+        var resRate = data.restaurants[i].restaurant.user_rating.rating_text;
+        var resName = data.restaurants[i].restaurant.name;
+        var hood = data.restaurants[i].restaurant.location.locality;
+        $('.restaurants').append('<div>'+resName+' (' + hood + ') <span>Rating: ' + resRate + '</span></div>');
+  		}
+
+
+  	});
+
+
+  });
+
+	</script>
+
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>Get Weather in Locations</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+		<link rel="stylesheet" href="styles.css">
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	</head>
+	<body>
+
+	<div class="container">
+		<div class="row">
+			<div class="twelve columns">
+				<div class="word"></div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+
+  var dic = 'https://www.dictionaryapi.com/api/v1/references/collegiate/xml/test?key=2ab31dac-71d4-49ff-852f-83a1f4c1ecf0';
+
+	$.getJSON(dic, function(data){
+    $('.word').append(data.def);
+	});
+
+	</script>
+
+  </body>
+</html>
