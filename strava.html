@@ -8,21 +8,6 @@
 		<link rel="stylesheet" href="styles.css">
 		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <style>
-      .resname {
-        width: 32%;
-        float: left;
-        height: 500px;
-        border: 1px solid;
-        margin-right: 1%;
-        margin-bottom: 2%;
-				padding: 2% 0 1%;
-				text-align: center;
-      }
-			.resname img {
-		    width: 100%;
-		    max-width: 300px;
-		    height: auto;
-			}
     </style>
 	</head>
 	<body>
@@ -30,6 +15,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="twelve columns">
+        <div class="longrides"></div>
         <div class="rides"></div>
 			</div>
 		</div>
@@ -42,50 +28,26 @@
 		var key = '237bdb3d2bf2cd7c036b588e2890d7e14565c048';
     var url = 'https://www.strava.com/api/v3/athlete/activities?access_token='+key+'';
 
-    // Array.prototype.filter()
-    // 1. Filter the list of inventors for those who were born in the 1500's
-    // const fifteen = inventors.filter(function(inventor){
-    //   if (inventor.year >= 1500 && inventor.year < 1600) {
-    //     return true;
-    //   }
-    // })
-    // console.table(fifteen)
-
-
   	$.getJSON(url, function(data){
       // use this var to convert meters to miles
-      var convert = 0.000621371;
+      var dist = 0.000621371;
+      var dates = ;
 
       // rides over 25000 meters
-      var rides = data.filter(function(ride){
-        if (ride.distance >= 25000) {
-          return true;
-        }
-      });
-
-      $('.rides').html(rides[0].distance * convert);
-
-
-      // for ( var i in data) {
-      //   var rides = data[i];
-  		// }
-      //console.log(rides[i].distance);
-
-
-      // Multiply # of meters * 0.000621371 to get distance in miles
-      var jacksonMeters = 73771.7;
-      console.log(jacksonMeters * convert);
-
-      // for (var i = 0; i < data.length; i++) {
-      //   var names = data[i];
-      // }
+      // var rides = data.filter(function(ride){
+      //   if (ride.distance >= 25000) {
+      //     return true;
+      //   }
+      // });
       //
-      // for ( var i in data) {
-      //   var rides = data[i];
-  		// }
+      // console.table(rides)
 
-      //console.log(names);
-      //console.log(data);
+      for (var i in data) {
+        var distance = data[i].distance;
+        var rideDate = data[i].start_date;
+        $('.rides').append('<div><span>Date:' + rideDate + ' </span> Distance: ' + distance * dist + '</div>');
+      }
+
   	});
 
 
