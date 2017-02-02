@@ -7,6 +7,23 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
 		<link rel="stylesheet" href="styles.css">
 		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <style>
+      .resname {
+        width: 32%;
+        float: left;
+        height: 500px;
+        border: 1px solid;
+        margin-right: 1%;
+        margin-bottom: 2%;
+				padding: 2% 0 1%;
+				text-align: center;
+      }
+			.resname img {
+		    width: 100%;
+		    max-width: 300px;
+		    height: auto;
+			}
+    </style>
 	</head>
 	<body>
 
@@ -14,6 +31,16 @@
 		<div class="row">
 			<div class="twelve columns">
 				<div class="word"><a href="https://www.zomato.com" target="_blank">Zomato</a></div>
+
+				<form>
+
+					<label>City:</label>
+					<input type="text" id="text" name="name" value="">
+
+	        <input type="button" id="text_value" value="Get Value">
+	        <input type="button" id="text_reset" value="Reset">
+				</form>
+
         <div class="restaurants"></div>
 			</div>
 		</div>
@@ -22,18 +49,33 @@
 	<script>
 
   $(document).ready(function(){
+		//var atlId = '288';
 
-    zomKey = '2baec02eae04283237c811b12ea1c01e'
-    var zomUrl = 'https://developers.zomato.com/api/v2.1/search?entity_type=city&q=atlanta&apikey=2baec02eae04283237c811b12ea1c01e';
+		$('#text_value').click(function() {
+			var text_value = $("#text").val();
+			if(text_value=='') {
+	  	   alert("Enter A City In Input Field");
+	  	} else {
+				var city = text_value;
+				var zomKey = '2baec02eae04283237c811b12ea1c01e';
+		    var zomUrl = 'https://developers.zomato.com/api/v2.1/search?entity_type=city&q='+city+'&apikey='+zomKey+'';
 
-  	$.getJSON(zomUrl, function(data){
-      for ( var i in data.restaurants) {
-        var resRate = data.restaurants[i].restaurant.user_rating.rating_text;
-        var resName = data.restaurants[i].restaurant.name;
-        var hood = data.restaurants[i].restaurant.location.locality;
-        $('.restaurants').append('<div>'+resName+' (' + hood + ') <span>Rating: ' + resRate + '</span></div>');
-  		}
-  	});
+
+		  	$.getJSON(zomUrl, function(data){
+		      for ( var i in data.restaurants) {
+		        var resRate = data.restaurants[i].restaurant.user_rating.rating_text;
+		        var resName = data.restaurants[i].restaurant.name;
+		        var hood = data.restaurants[i].restaurant.location.locality;
+		        var menu = data.restaurants[i].restaurant.menu_url;
+						var featImg = data.restaurants[i].restaurant.featured_image;
+		        $('.restaurants').append('<div class="resname"><h2>'+resName+'</h2> <div>(' + hood + ')</div> <div> <img src="'+ featImg +'"> </div> <div>Rating: ' + resRate + '</div> <div><a href="'+ menu+'">Menu</a></div></div>');
+		  		}
+		  	});
+			}
+
+		});
+
+
 
 
   });
