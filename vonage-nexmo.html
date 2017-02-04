@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>Get Vonage Info</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+		<link rel="stylesheet" href="styles.css">
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <style>
+    </style>
+	</head>
+	<body>
+
+	<div class="container">
+		<div class="row">
+			<div class="twelve columns">
+        <div class="calls"></div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+
+  $(document).ready(function(){
+
+		// var key = '237bdb3d2bf2cd7c036b588e2890d7e14565c048';
+    // var url = 'https://www.strava.com/api/v3/athlete/activities?access_token='+key+'';
+
+    //secret: b8bf99b23f891e83
+    //key: 19b468f2
+    // https://docs.nexmo.com/number-insight/advanced/api-reference
+    // NEXMO CLI https://docs.nexmo.com/tools/nexmo-cli#insight_basic
+
+  	$.getJSON(url, function(data){
+
+      for (var i in data) {
+        // var distance = data[i].distance;
+        // var rideDate = data[i].start_date;
+        // var movingTime = data[i].moving_time / 60;
+        // var totalTime = data[i].elapsed_time / 60;
+        // $('.rides').append('<div><span>Date: ' + rideDate + ' </span> Distance: ' + distance * dist + '</div>');
+      }
+
+  	});
+  });
+
+	</script>
+
+  </body>
+</html>
