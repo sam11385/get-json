@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>Get Some Beer</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+		<link rel="stylesheet" href="styles.css">
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <style>
+    </style>
+	</head>
+	<body>
+
+	<div class="container">
+		<div class="row">
+			<div class="twelve columns">
+        <select>
+          <option class="beers" value=""></option>
+        </select>
+        <div class="abv"></div>
+        <div class="descript"></div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+
+  $(document).ready(function(){
+
+		//var key = 'f51f0e428b3f16b32cc54bc092abe71c';
+    var url = 'beers.json';
+
+  	$.getJSON(url, function(data){
+
+      for (i = 0; i < data.beers.length; i++) {
+        var name = data.beers[i].name;
+        var abv = data.beers[i].abv;
+        var descript = data.beers[i].descript;
+        $("select").append('<option value="'+name+'">'+name+'</option>');
+      }
+
+      if ($('.beers').val(name)) {
+        $('.abv').append(abv);
+      }
+
+
+
+
+      // for (var i = 0; i < data.length; i++){
+      //   console.log(data.beers[i].name);
+      // }
+
+      // for (var i in data) {
+      //   console.log(data.beers[i]); //"aa", bb", "cc"
+      // }
+
+
+  	});
+
+
+  });
+
+	</script>
+
+  </body>
+</html>
