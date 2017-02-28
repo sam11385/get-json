@@ -37,26 +37,26 @@
         var name = data.beers[i].name;
         var abv = data.beers[i].abv;
         var descript = data.beers[i].descript;
-        $("select").append('<option value="'+name+'">'+name+'</option>');
+        $('select').append('<option value="'+name+'">'+name+'</option>');
+        //var text_value = $('.beers').val();
+
       }
-
-      if ($('.beers').val(name)) {
-        $('.abv').append(abv);
-      }
-
-
-
-
-      // for (var i = 0; i < data.length; i++){
-      //   console.log(data.beers[i].name);
-      // }
-
-      // for (var i in data) {
-      //   console.log(data.beers[i]); //"aa", bb", "cc"
-      // }
-
 
   	});
+
+		var fruits = ['apple', 'banana', 'grapes', 'mango', 'orange'];
+
+		//Array filters items based on search criteria (query)
+
+		function filterItems(query) {
+		    return fruits.filter(function(el) {
+		     return el.toLowerCase().indexOf(query.toLowerCase()) > -1;
+		    })
+		}
+
+
+		console.log(filterItems('ap')); // ['apple', 'grapes']
+		console.log(filterItems('an')); // ['banana', 'mango', 'orange']
 
 
   });
