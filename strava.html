@@ -6,6 +6,7 @@
 		<title>Get Strava Info</title>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
 		<link rel="stylesheet" href="styles.css">
+		<script src="moment.js"></script>
 		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	</head>
 	<body class="strava">
@@ -24,15 +25,21 @@
       // use this var to convert meters to miles
       var dist = 0.000621371;
 
+
       for (var i in data) {
+				moment().format();
         var distance = data[i].distance;
         var rideDate = data[i].start_date;
+				var dateFormat = moment().format(rideDate);
         var movingTime = data[i].moving_time / 60;
         var totalTime = data[i].elapsed_time / 60;
 				var rideName = data[i].name;
 				var number = distance * dist;
 				var rounded = Math.round( number * 10 ) / 10;
-        $('.rides').append('<div class="ride"><div class="ride-name">'+rideName+'</div><div class="ride-date">Date: ' + rideDate + ' </div> <div class="ride-distance">Distance: ' + rounded + ' miles</div></div>');
+				var speed = data[i].average_speed;
+				var spdConvert = speed * 2.23694;
+				var rndSpeedConv = Math.round( spdConvert * 10 ) / 10;
+        $('.rides').append('<div class="ride"><div class="ride-name">' + rideName + '</div><div class="ride-date">Date: ' + dateFormat + ' </div> <div class="ride-distance">Distance: ' + rounded + ' miles</div><div class="spd">Avg Speed: ' + rndSpeedConv + ' mph</div></div>');
       }
 
   	});
