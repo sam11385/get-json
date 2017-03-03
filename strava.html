@@ -7,24 +7,6 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
 		<link rel="stylesheet" href="styles.css">
 		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <style>
-		.rides {
-			display: flex;
-			flex-flow: row wrap;
-  		justify-content: space-around;
-			height: 200px;
-		}
-
-		.ride {
-			width: 200px;
-			height: 100px;
-			margin: 1%;
-			-moz-box-shadow:    1px 1px 1px 1px #ccc;
-			-webkit-box-shadow: 1px 1px 1px 1px #ccc;
-			box-shadow:         1px 1px 1px 1px #ccc;
-		}
-
-    </style>
 	</head>
 	<body class="strava">
 
@@ -50,7 +32,7 @@
 				var rideName = data[i].name;
 				var number = distance * dist;
 				var rounded = Math.round( number * 10 ) / 10;
-        $('.rides').append('<div class="ride"><div>'+rideName+'</div><div>Date: ' + rideDate + ' </div> <div>Distance: ' + rounded + ' miles</div></div>');
+        $('.rides').append('<div class="ride"><div class="ride-name">'+rideName+'</div><div class="ride-date">Date: ' + rideDate + ' </div> <div class="ride-distance">Distance: ' + rounded + ' miles</div></div>');
       }
 
   	});

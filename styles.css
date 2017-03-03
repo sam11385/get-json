@@ -17,3 +17,21 @@
 h3{
   text-align: center;
 }
+
+
+/* Strava */
+.strava .rides {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  height: 200px;
+}
+
+.strava .ride {
+  width: 200px;
+  height: 100px;
+  margin: 1%;
+  -moz-box-shadow:    1px 1px 1px 1px #ccc;
+  -webkit-box-shadow: 1px 1px 1px 1px #ccc;
+  box-shadow:         1px 1px 1px 1px #ccc;
+}
