@@ -27,7 +27,6 @@
       // use this var to convert meters to miles
       var dist = 0.000621371;
 
-
       for (var i in data) {
         var distance = data[i].distance;
 				// initialize a date format, convert it to a normal date
@@ -35,7 +34,7 @@
 				var day = initDate.getDate();
 				var month = initDate.getMonth();
 				var year = initDate.getFullYear();
-				var stravaDate = month + "/" + day + "/" + year;
+				var stravaDate = (month+1) + "/" + day + "/" + year;
         var movingTime = data[i].moving_time / 60;
 				var movingRnd = Math.round( movingTime * 10 ) / 10;
 				var rideName = data[i].name;
@@ -45,8 +44,6 @@
 				var spdConvert = speed * 2.23694;
 				var rndSpeedConv = Math.round( spdConvert * 10 ) / 10;
         $('.rides').append('<div class="ride"><div class="ride-name">' + rideName + '</div><div class="ride-date">Date: ' + stravaDate + ' </div> <div class="ride-distance">Distance: ' + rounded + ' miles</div><div class="spd">Avg Speed: ' + rndSpeedConv + ' mph</div> <div class="moving">Time: ' + movingRnd + ' minutes</div></div>');
-				// console.log(movingTime);
-				// console.log(totalTime - movingTime);
       }
 
   	});
