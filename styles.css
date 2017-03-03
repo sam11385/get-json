@@ -20,6 +20,10 @@ h3{
 
 
 /* Strava */
+.strava .container {
+  max-width: 1500px;
+}
+
 .strava .rides {
   display: flex;
   flex-flow: row wrap;
@@ -29,9 +33,17 @@ h3{
 
 .strava .ride {
   width: 250px;
-  height: 150px;
+  height: auto;
   margin: 1%;
   -moz-box-shadow:    1px 1px 1px 1px #ccc;
   -webkit-box-shadow: 1px 1px 1px 1px #ccc;
   box-shadow:         1px 1px 1px 1px #ccc;
+  padding: 1% 2%;
+}
+
+.strava .container img{
+  max-width: 100px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
 }

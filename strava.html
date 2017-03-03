@@ -6,12 +6,14 @@
 		<title>Get Strava Info</title>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
 		<link rel="stylesheet" href="styles.css">
-		<script src="moment.js"></script>
 		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	</head>
 	<body class="strava">
 
 	<div class="container">
+			<div>
+				<img src="https://cdn.shopify.com/s/files/1/1061/1924/files/Bicycle_Emoji.png?9898922749706957214">
+			</div>
       <div class="rides"></div>
 	</div>
 
@@ -27,19 +29,24 @@
 
 
       for (var i in data) {
-				moment().format();
         var distance = data[i].distance;
-        var rideDate = data[i].start_date;
-				var dateFormat = moment().format(rideDate);
+				// initialize a date format, convert it to a normal date
+				var initDate = new Date(data[i].start_date);
+				var day = initDate.getDate();
+				var month = initDate.getMonth();
+				var year = initDate.getFullYear();
+				var stravaDate = month + "/" + day + "/" + year;
         var movingTime = data[i].moving_time / 60;
-        var totalTime = data[i].elapsed_time / 60;
+				var movingRnd = Math.round( movingTime * 10 ) / 10;
 				var rideName = data[i].name;
 				var number = distance * dist;
 				var rounded = Math.round( number * 10 ) / 10;
 				var speed = data[i].average_speed;
 				var spdConvert = speed * 2.23694;
 				var rndSpeedConv = Math.round( spdConvert * 10 ) / 10;
-        $('.rides').append('<div class="ride"><div class="ride-name">' + rideName + '</div><div class="ride-date">Date: ' + dateFormat + ' </div> <div class="ride-distance">Distance: ' + rounded + ' miles</div><div class="spd">Avg Speed: ' + rndSpeedConv + ' mph</div></div>');
+        $('.rides').append('<div class="ride"><div class="ride-name">' + rideName + '</div><div class="ride-date">Date: ' + stravaDate + ' </div> <div class="ride-distance">Distance: ' + rounded + ' miles</div><div class="spd">Avg Speed: ' + rndSpeedConv + ' mph</div> <div class="moving">Time: ' + movingRnd + ' minutes</div></div>');
+				// console.log(movingTime);
+				// console.log(totalTime - movingTime);
       }
 
   	});
