@@ -14,15 +14,11 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="twelve columns">
-        <div class="longrides"></div>
         <div class="rides"></div>
-			</div>
 		</div>
 	</div>
 
 	<script>
-
   $(document).ready(function(){
 
 		var key = '237bdb3d2bf2cd7c036b588e2890d7e14565c048';
@@ -31,27 +27,22 @@
   	$.getJSON(url, function(data){
       // use this var to convert meters to miles
       var dist = 0.000621371;
-      //var dates = ;
-
-      // rides over 25000 meters
-      // var rides = data.filter(function(ride){
-      //   if (ride.distance >= 25000) {
-      //     return true;
-      //   }
-      // });
-      //
-      // console.table(rides)
 
       for (var i in data) {
         var distance = data[i].distance;
         var rideDate = data[i].start_date;
         var movingTime = data[i].moving_time / 60;
         var totalTime = data[i].elapsed_time / 60;
-        $('.rides').append('<div><span>Date: ' + rideDate + ' </span> Distance: ' + distance * dist + '</div>');
+
+				var number = distance * dist;
+				var rounded = Math.round( number * 10 ) / 10;
+				// rounded is 12.3
+
+
+        $('.rides').append('<div class="ride four columns"><div>Date: ' + rideDate + ' </div> <div>Distance: ' + rounded + ' miles</div></div>');
       }
 
   	});
-
 
   });
 
