@@ -8,14 +8,28 @@
 		<link rel="stylesheet" href="styles.css">
 		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <style>
+		.rides {
+			display: flex;
+			flex-flow: row wrap;
+  		justify-content: space-around;
+			height: 200px;
+		}
+
+		.ride {
+			width: 200px;
+			height: 100px;
+			margin: 1%;
+			-moz-box-shadow:    1px 1px 1px 1px #ccc;
+			-webkit-box-shadow: 1px 1px 1px 1px #ccc;
+			box-shadow:         1px 1px 1px 1px #ccc;
+		}
+
     </style>
 	</head>
-	<body>
+	<body class="strava">
 
 	<div class="container">
-		<div class="row">
-        <div class="rides"></div>
-		</div>
+      <div class="rides"></div>
 	</div>
 
 	<script>
@@ -33,13 +47,10 @@
         var rideDate = data[i].start_date;
         var movingTime = data[i].moving_time / 60;
         var totalTime = data[i].elapsed_time / 60;
-
+				var rideName = data[i].name;
 				var number = distance * dist;
 				var rounded = Math.round( number * 10 ) / 10;
-				// rounded is 12.3
-
-
-        $('.rides').append('<div class="ride four columns"><div>Date: ' + rideDate + ' </div> <div>Distance: ' + rounded + ' miles</div></div>');
+        $('.rides').append('<div class="ride"><div>'+rideName+'</div><div>Date: ' + rideDate + ' </div> <div>Distance: ' + rounded + ' miles</div></div>');
       }
 
   	});
