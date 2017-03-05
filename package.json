@@ -18,6 +18,7 @@
   "homepage": "https://github.com/sam11385/get-json#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.0.3",
     "gulp-sass": "^3.1.0"
   }
 }
