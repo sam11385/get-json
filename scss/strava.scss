@@ -1,0 +1,33 @@
+/* Strava */
+.strava{
+  .container {
+    max-width: 1500px;
+  }
+
+
+  .rides {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    height: 200px;
+  }
+
+  .ride {
+    width: 250px;
+    height: auto;
+    margin: 1%;
+    box-shadow: 1px 1px 1px 1px #ccc;
+    padding: 1% 2%;
+    transition: $transition;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  .container img{
+    max-width: 100px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+}
