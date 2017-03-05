@@ -1,0 +1,19 @@
+{
+  "name": "get-json",
+  "version": "1.0.0",
+  "description": "get json data from a bunch of public apis",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sam11385/get-json.git"
+  },
+  "author": "Sam Luedke",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sam11385/get-json/issues"
+  },
+  "homepage": "https://github.com/sam11385/get-json#readme"
+}
