@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/sam11385/get-json/issues"
   },
-  "homepage": "https://github.com/sam11385/get-json#readme"
+  "homepage": "https://github.com/sam11385/get-json#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
 }
