@@ -1,9 +1,6 @@
 .strava{
-  .container {
-    max-width: 1500px;
-  }
-
-
+  font-size: .9rem;
+  line-height: 1.3rem;
   .rides {
     display: flex;
     flex-flow: row wrap;
@@ -12,21 +9,21 @@
   }
 
   .ride {
-    width: 250px;
+    width: 220px;
     height: auto;
-    margin: 1%;
+    margin: .5%;
     box-shadow: 1px 1px 1px 1px #ccc;
-    padding: 1% 2%;
+    padding: 1% 1.5%;
     transition: $transition;
     &:hover {
       transform: scale(1.1);
     }
   }
-
   .container img{
     max-width: 100px;
     height: auto;
     margin: 0 auto;
     display: block;
   }
+
 }
