@@ -6,6 +6,7 @@
 		<title>Get Zomato Restaurant Info</title>
 		<link rel="stylesheet" href="dist/styles.css">
 		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+		<script src="js/script.js"></script>
 	</head>
 	<body class="zomato">
 
@@ -27,42 +28,6 @@
 			</div>
 		</div>
 	</div>
-
-	<script>
-
-  $(document).ready(function(){
-		//var atlId = '288';
-
-		$('#text_value').click(function() {
-			var text_value = $("#text").val();
-			if(text_value=='') {
-	  	   alert("Enter A City In Input Field");
-	  	} else {
-				var city = text_value;
-				var zomKey = '2baec02eae04283237c811b12ea1c01e';
-		    var zomUrl = 'https://developers.zomato.com/api/v2.1/search?entity_type=city&q='+city+'&apikey='+zomKey+'';
-
-
-		  	$.getJSON(zomUrl, function(data){
-		      for ( var i in data.restaurants) {
-		        var resRate = data.restaurants[i].restaurant.user_rating.rating_text;
-		        var resName = data.restaurants[i].restaurant.name;
-		        var hood = data.restaurants[i].restaurant.location.locality;
-		        var menu = data.restaurants[i].restaurant.menu_url;
-						var featImg = data.restaurants[i].restaurant.featured_image;
-		        $('.restaurants').append('<div class="resname"><h2>'+resName+'</h2> <div>(' + hood + ')</div> <div> <img src="'+ featImg +'"> </div> <div>Rating: ' + resRate + '</div> <div><a href="'+ menu+'">Menu</a></div></div>');
-		  		}
-		  	});
-			}
-
-		});
-
-
-
-
-  });
-
-	</script>
 
   </body>
 </html>

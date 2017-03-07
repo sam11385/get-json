@@ -1,9 +1,10 @@
 $(document).ready(function(){
 
+  // strava
   var key = '237bdb3d2bf2cd7c036b588e2890d7e14565c048';
-  var url = 'https://www.strava.com/api/v3/athlete/activities?access_token='+key+'';
+  var stravaUrl = 'https://www.strava.com/api/v3/athlete/activities?access_token='+key+'';
 
-  $.getJSON(url, function(data){
+  $.getJSON(stravaUrl, function(data){
     // use this var to convert meters to miles
     var dist = 0.000621371;
 
@@ -24,6 +25,31 @@ $(document).ready(function(){
       var spdConvert = speed * 2.23694;
       var rndSpeedConv = Math.round( spdConvert * 10 ) / 10;
       $('.rides').append('<div class="ride"><div class="ride-name">' + rideName + '</div><div class="ride-date">Date: ' + stravaDate + ' </div> <div class="ride-distance">Distance: ' + rounded + ' miles</div><div class="spd">Avg Speed: ' + rndSpeedConv + ' mph</div> <div class="moving">Time: ' + movingRnd + ' minutes</div></div>');
+    }
+
+  });
+
+  // zomato
+  $('#text_value').click(function() {
+    var text_value = $("#text").val();
+    if(text_value=='') {
+       alert("Enter A Food Type In Input Field");
+    } else {
+      var city = text_value;
+      var zomKey = '2baec02eae04283237c811b12ea1c01e';
+      var zomUrl = 'https://developers.zomato.com/api/v2.1/search?entity_type=city&q='+city+'&apikey='+zomKey+'';
+
+
+      $.getJSON(zomUrl, function(data){
+        for ( var i in data.restaurants) {
+          var resRate = data.restaurants[i].restaurant.user_rating.rating_text;
+          var resName = data.restaurants[i].restaurant.name;
+          var hood = data.restaurants[i].restaurant.location.locality;
+          var menu = data.restaurants[i].restaurant.menu_url;
+          var featImg = data.restaurants[i].restaurant.featured_image;
+          $('.restaurants').append('<div class="resname"><h2>'+resName+'</h2> <div>(' + hood + ')</div> <div> <img src="'+ featImg +'"> </div> <div>Rating: ' + resRate + '</div> <div><a href="'+ menu+'">Menu</a></div></div>');
+        }
+      });
     }
 
   });
