@@ -39,7 +39,6 @@ $(document).ready(function(){
       var zomKey = '2baec02eae04283237c811b12ea1c01e';
       var zomUrl = 'https://developers.zomato.com/api/v2.1/search?entity_type=city&q='+city+'&apikey='+zomKey+'';
 
-
       $.getJSON(zomUrl, function(data){
         for ( var i in data.restaurants) {
           var resRate = data.restaurants[i].restaurant.user_rating.rating_text;
@@ -54,17 +53,25 @@ $(document).ready(function(){
 
   });
 
-
   // Stocks
-  var dksStock = 'http://dev.markitondemand.com/MODApis/Api/v2/Quote/jsonp?symbol=DKS&callback=?';
-  $.getJSON(dksStock, function(data){
-    $('.dks-name').append('<div>'+data.Name+'</div>');
-    $('.dks-symbol').append('<div>'+data.Symbol+'</div>');
-    $('.dks-price').append('<div>'+data.LastPrice+'</div>');
-    $('.dks-ytd').append('<div>'+data.ChangeYTD+'</div>');
-    $('.dks-high').append('<div>'+data.High+'</div>');
-    $('.dks-low').append('<div>'+data.Low+'</div>');
-    $('.dks-open').append('<div>'+data.Open+'</div>');
+  $('.stocks .card').hide()
+  $('#stock_value').click(function(){
+    var stockValue = $("#stock").val();
+    $('.stocks .card').show()
+    if(stockValue =='') {
+       alert("Enter A Stock Symbol");
+    } else {
+      var symbol = stockValue;
+      var dksStock = 'http://dev.markitondemand.com/MODApis/Api/v2/Quote/jsonp?symbol='+symbol+'&callback=?';
+      $.getJSON(dksStock, function(data){
+        $('.dks-name').append('<div>'+data.Name+'</div>');
+        $('.dks-symbol').append('<div>'+data.Symbol+'</div>');
+        $('.dks-price').append('<div>'+data.LastPrice+'</div>');
+        $('.dks-ytd').append('<div>'+data.ChangeYTD+'</div>');
+        $('.dks-high').append('<div>'+data.High+'</div>');
+        $('.dks-low').append('<div>'+data.Low+'</div>');
+        $('.dks-open').append('<div>'+data.Open+'</div>');
+      });
+    }
   });
-
 });

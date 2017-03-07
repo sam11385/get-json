@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<title>DKS Stock</title>
+		<title>Get Stock Info - MarkitOnDemand</title>
 		<link rel="stylesheet" href="dist/styles.css">
 		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 		<script src="js/script.js"></script>
@@ -15,9 +15,9 @@
 			<div class="enter">
 				<form>
 					<label>Enter stock symbol:</label>
-					<input type="text" id="text" name="name" value="">
-	        <input type="button" id="text_value" value="Get Stock Info">
-	        <input type="button" id="text_reset" value="Reset">
+					<input type="text" id="stock" name="name" value="">
+	        <input type="button" id="stock_value" value="Get Stock Info">
+	        <input type="button" id="stock_reset" value="Reset" onClick="window.location.reload()">
 				</form>
 			</div>
 			<div class="card twelve columns">
