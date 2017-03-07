@@ -36,7 +36,7 @@ body {
   margin-right: auto;
   margin-left: auto;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1600px;
   padding-left: 0.5rem;
   padding-right: 0.5rem; }
 
@@ -1024,3 +1024,14 @@ hr {
 
 .zomato h3 {
   text-align: center; }
+
+.card {
+  text-align: center;
+  border: 1px solid #f1f1f1;
+  border-radius: 1px;
+  padding: 2% 0;
+  box-shadow: 1px 1px 2px #ccc; }
+
+.card span {
+  font-weight: 600;
+  font-size: 16px; }

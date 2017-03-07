@@ -2,3 +2,16 @@
 @import "vars";
 @import "strava";
 @import "zomato";
+
+.card {
+  text-align: center;
+  border: 1px solid #f1f1f1;
+  border-radius: 1px;
+  padding: 2% 0;
+  box-shadow: 1px 1px 2px #ccc;
+}
+
+.card span {
+  font-weight: 600;
+  font-size: 16px;
+}
