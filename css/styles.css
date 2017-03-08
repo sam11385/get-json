@@ -971,12 +971,13 @@ hr {
 .strava {
   font-size: .9rem;
   line-height: 1.3rem; }
-  .strava .totals,
+  .strava .stats,
   .strava .rides {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
     height: 200px; }
+  .strava .stat,
   .strava .ride {
     width: 220px;
     height: auto;
@@ -984,6 +985,7 @@ hr {
     box-shadow: 1px 1px 1px 1px #ccc;
     padding: 1% 1.5%;
     transition: 0.3s ease-in all; }
+    .strava .stat:hover,
     .strava .ride:hover {
       transform: scale(1.1); }
   .strava .container img {

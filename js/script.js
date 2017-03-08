@@ -46,6 +46,8 @@ $(document).ready(function(){
     var allRides = data.all_ride_totals.count;
     var allDistance = data.all_ride_totals.distance * dist;
     var allMoveTime = data.all_ride_totals.moving_time / 60;
+
+    $('.stats').append('<div class="stat"><div class="ytd"><div class="ytd-count">Total Rides: '+ytdRides+'</div></div></div>')
   });
 
   // zomato

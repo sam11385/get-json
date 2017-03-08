@@ -1,8 +1,8 @@
-
 .strava{
   font-size: .9rem;
   line-height: 1.3rem;
-  .totals,
+
+  .stats,
   .rides {
     display: flex;
     flex-flow: row wrap;
@@ -10,6 +10,7 @@
     height: 200px;
   }
 
+  .stat,
   .ride {
     width: 220px;
     height: auto;
