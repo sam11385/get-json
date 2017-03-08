@@ -1,10 +1,19 @@
 $(document).ready(function(){
 
   // strava
+  var samId = 10095088;
+  var dadId = 20146501;
   var key = '237bdb3d2bf2cd7c036b588e2890d7e14565c048';
-  var stravaUrl = 'https://www.strava.com/api/v3/athlete/activities?access_token='+key+'';
+  // Get an athlets activities
+  var stravaActivitiesUrl = 'https://www.strava.com/api/v3/athlete/activities?access_token='+key+'';
+  // Get athletes profile information
+  var stravaAthletesUrl = 'https://www.strava.com/api/v3/athletes/'+samId+'?access_token='+key+'';
+  //Get athletes stats
+  var stravaStatsUrl = 'https://www.strava.com/api/v3/athletes/'+samId+'/stats?access_token='+key+'';
 
-  $.getJSON(stravaUrl, function(data){
+
+
+  $.getJSON(stravaActivitiesUrl, function(data){
     // use this var to convert meters to miles
     var dist = 0.000621371;
 
