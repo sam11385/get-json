@@ -971,6 +971,7 @@ hr {
 .strava {
   font-size: .9rem;
   line-height: 1.3rem; }
+  .strava .totals,
   .strava .rides {
     display: flex;
     flex-flow: row wrap;

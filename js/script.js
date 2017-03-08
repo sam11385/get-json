@@ -5,18 +5,15 @@ $(document).ready(function(){
   var dadId = 20146501;
   var key = '237bdb3d2bf2cd7c036b588e2890d7e14565c048';
   // Get an athlets activities
-  var stravaActivitiesUrl = 'https://www.strava.com/api/v3/athlete/activities?access_token='+key+'';
+  var stravaActivities = 'https://www.strava.com/api/v3/athlete/activities?access_token='+key+'';
   // Get athletes profile information
-  var stravaAthletesUrl = 'https://www.strava.com/api/v3/athletes/'+samId+'?access_token='+key+'';
+  var stravaAthletes = 'https://www.strava.com/api/v3/athletes/'+samId+'?access_token='+key+'';
   //Get athletes stats
-  var stravaStatsUrl = 'https://www.strava.com/api/v3/athletes/'+samId+'/stats?access_token='+key+'';
+  var stravaStats = 'https://www.strava.com/api/v3/athletes/'+samId+'/stats?access_token='+key+'';
+  // convert meters to miles
+  var dist = 0.000621371;
 
-
-
-  $.getJSON(stravaActivitiesUrl, function(data){
-    // use this var to convert meters to miles
-    var dist = 0.000621371;
-
+  $.getJSON(stravaActivities, function(data){
     for (var i in data) {
       var distance = data[i].distance;
       // initialize a date format, convert it to a normal date
@@ -36,6 +33,19 @@ $(document).ready(function(){
       $('.rides').append('<div class="ride"><div class="ride-name">' + rideName + '</div><div class="ride-date">Date: ' + stravaDate + ' </div> <div class="ride-distance">Distance: ' + rounded + ' miles</div><div class="spd">Avg Speed: ' + rndSpeedConv + ' mph</div> <div class="moving">Time: ' + movingRnd + ' minutes</div></div>');
     }
 
+  });
+
+  $.getJSON(stravaStats, function(data){
+    // Longest ride
+    var longestRide = data.biggest_ride_distance * dist;
+    // year to date rides
+    var ytdRides = data.ytd_ride_totals.count;
+    var ytdDist = data.ytd_ride_totals.distance * dist;
+    var ytdMoveTime = data.ytd_ride_totals.moving_time / 60;
+    // All time rides
+    var allRides = data.all_ride_totals.count;
+    var allDistance = data.all_ride_totals.distance * dist;
+    var allMoveTime = data.all_ride_totals.moving_time / 60;
   });
 
   // zomato
