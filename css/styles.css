@@ -988,11 +988,22 @@ hr {
     .strava .stat:hover,
     .strava .ride:hover {
       transform: scale(1.1); }
+  .strava .stat {
+    width: 100%;
+    max-width: 500px; }
   .strava .container img {
     max-width: 100px;
     height: auto;
     margin: 0 auto;
     display: block; }
+  .strava .ytd h4 {
+    margin: 0;
+    text-align: center; }
+  @media (min-width: 480px) {
+    .strava .ride {
+      text-align: center;
+      margin-bottom: 4%;
+      padding: 2% 1%; } }
 
 .zomato .resname {
   width: 32%;

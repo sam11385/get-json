@@ -25,12 +25,11 @@ $(document).ready(function(){
       var movingTime = data[i].moving_time / 60;
       var movingRnd = Math.round( movingTime * 10 ) / 10;
       var rideName = data[i].name;
-      var number = distance * dist;
-      var rounded = Math.round( number * 10 ) / 10;
+      var rndDistance = Math.round(distance * dist * 10) / 10;
       var speed = data[i].average_speed;
       var spdConvert = speed * 2.23694;
       var rndSpeedConv = Math.round( spdConvert * 10 ) / 10;
-      $('.rides').append('<div class="ride"><div class="ride-name">' + rideName + '</div><div class="ride-date">Date: ' + stravaDate + ' </div> <div class="ride-distance">Distance: ' + rounded + ' miles</div><div class="spd">Avg Speed: ' + rndSpeedConv + ' mph</div> <div class="moving">Time: ' + movingRnd + ' minutes</div></div>');
+      $('.rides').append('<div class="ride"><div class="ride-name">' + rideName + '</div><div class="ride-date">Date: ' + stravaDate + ' </div> <div class="ride-distance">Distance: ' + rndDistance + ' miles</div><div class="spd">Avg Speed: ' + rndSpeedConv + ' mph</div> <div class="moving">Time: ' + movingRnd + ' minutes</div></div>');
     }
 
   });
@@ -40,14 +39,15 @@ $(document).ready(function(){
     var longestRide = data.biggest_ride_distance * dist;
     // year to date rides
     var ytdRides = data.ytd_ride_totals.count;
-    var ytdDist = data.ytd_ride_totals.distance * dist;
+    var ytdDist = Math.round(data.ytd_ride_totals.distance * dist * 10) / 10;
     var ytdMoveTime = data.ytd_ride_totals.moving_time / 60;
+    var goalPercent = ytdDist;
     // All time rides
     var allRides = data.all_ride_totals.count;
     var allDistance = data.all_ride_totals.distance * dist;
     var allMoveTime = data.all_ride_totals.moving_time / 60;
 
-    $('.stats').append('<div class="stat"><div class="ytd"><div class="ytd-count">Total Rides: '+ytdRides+'</div></div></div>')
+    $('.stats').append('<div class="stat"><div class="ytd"><h4>This Year:</h4><div class="ytd-count">Total Rides: '+ytdRides+'</div><div class="ytd-dist">Total Distance: '+ytdDist+'</div><div class="goal">Year goal - 1000 miles - <span>'+goalPercent+'</span></div></div></div>')
   });
 
   // zomato
