@@ -982,15 +982,15 @@ hr {
     width: 220px;
     height: auto;
     margin: .5%;
-    box-shadow: 1px 1px 1px 1px #ccc;
+    box-shadow: .5px .5px .5px .5px #ccc;
     padding: 1% 1.5%;
     transition: 0.3s ease-in all; }
     .strava .stat:hover,
     .strava .ride:hover {
-      transform: scale(1.1); }
+      transform: scale(1.03); }
   .strava .stat {
-    width: 100%;
-    max-width: 500px; }
+    width: 47.6%;
+    margin: .3%; }
   .strava .container img {
     max-width: 100px;
     height: auto;
@@ -999,7 +999,7 @@ hr {
   .strava .ytd h4 {
     margin: 0;
     text-align: center; }
-  @media (min-width: 480px) {
+  @media (max-width: 480px) {
     .strava .ride {
       text-align: center;
       margin-bottom: 4%;
