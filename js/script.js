@@ -41,13 +41,13 @@ $(document).ready(function(){
     var ytdRides = data.ytd_ride_totals.count;
     var ytdDist = Math.round(data.ytd_ride_totals.distance * dist * 10) / 10;
     var ytdMoveTime = data.ytd_ride_totals.moving_time / 60;
-    var goalPercent = ytdDist;
+    var goalPercent = Math.floor((ytdDist / 1000) * 100);
     // All time rides
     var allRides = data.all_ride_totals.count;
     var allDistance = data.all_ride_totals.distance * dist;
     var allMoveTime = data.all_ride_totals.moving_time / 60;
 
-    $('.stats').append('<div class="stat"><div class="ytd"><h4>This Year:</h4><div class="ytd-count">Total Rides: '+ytdRides+'</div><div class="ytd-dist">Total Distance: '+ytdDist+'</div><div class="goal">Year goal - 1000 miles - <span>'+goalPercent+'</span></div></div></div>')
+    $('.stats').append('<div class="stat"><div class="ytd"><h4>This Year:</h4><div class="ytd-count">Total Rides: '+ytdRides+'</div><div class="ytd-dist">Total Distance: '+ytdDist+'</div><div class="goal">Year goal: 1000 miles <div>'+goalPercent+'% of the way to goal</div></div></div></div>')
   });
 
   // zomato
