@@ -124,4 +124,19 @@ $(document).ready(function(){
 
   // Football data
   // key 02a9c4b69c5c44ec9d669383b7fdd698
+
+
+
+  // Vehicle data
+  // key 467ku67s5u2f7wmbgd6ax286
+  // http://api.edmunds.com/api/vehicle/v2/makes?fmt=json&state=new&api_key=
+
+  // Example of getting all mazda vehicles
+  // http://api.edmunds.com/api/vehicle/v2/mazda?fmt=json&api_key=467ku67s5u2f7wmbgd6ax286
+
+  // Docs http://developer.edmunds.com/api-documentation/overview/
+
+  if ($('body').hasClass('cars')) {
+    
+  }
 });
