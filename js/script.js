@@ -137,6 +137,16 @@ $(document).ready(function(){
   // Docs http://developer.edmunds.com/api-documentation/overview/
 
   if ($('body').hasClass('cars')) {
-    
+
+  }
+
+
+  // TV Data
+  // http://www.tvmaze.com/api
+  // Example of getting some shows: http://api.tvmaze.com/search/shows?q=last-man
+  // Example of getting a schedule for a given date: http://api.tvmaze.com/schedule?country=US&date=2014-12-01
+  // Example of searching for a tv actor: http://api.tvmaze.com/search/people?q=tim-allen
+  if ($('body').hasClass('tv')) {
+
   }
 });
