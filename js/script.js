@@ -209,21 +209,18 @@ $(document).ready(function(){
       if(text_value=='') {
          alert("Enter A Show Input Field");
       } else {
-        const shows = text_value;
-        const tvShowsUrl = 'http://api.tvmaze.com/search/shows?q='+text_value+'';
-        const tvActorUrl = 'http://api.tvmaze.com/search/people?q='+text_value+'';
+        var shows = text_value;
+        var tvShowsUrl = 'http://api.tvmaze.com/search/shows?q='+text_value+'';
+        var tvActorUrl = 'http://api.tvmaze.com/search/people?q='+text_value+'';
 
         $.getJSON(tvShowsUrl, function(data){
-          for ( var i in data.show) {
-            // var menu = data.restaurants[i].restaurant.menu_url;
-            // var featImg = data.restaurants[i].restaurant.featured_image;
-
-            const showName = data.show;
-            console.log(showName);
-
-            $('.shows').append('<div class="show">'+showName+'</div>');
-          }
+          for ( var i in data ) {
+            var show = data[i].show.name;
+            //var showImg = data[i].show.image.original;
+            $('.shows').append('<div class="movie-card"><div class="show-name">'+show+'</div></div>');
+          };
         });
+
       }
 
     });
