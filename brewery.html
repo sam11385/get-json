@@ -4,11 +4,9 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<title>Get Some Beer</title>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
-		<link rel="stylesheet" href="styles.css">
+		<link rel="stylesheet" href="dist/styles.css">
 		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <style>
-    </style>
+		<script src="js/script.js"></script>
 	</head>
 	<body>
 
@@ -23,45 +21,6 @@
 			</div>
 		</div>
 	</div>
-
-	<script>
-
-  $(document).ready(function(){
-
-		//var key = 'f51f0e428b3f16b32cc54bc092abe71c';
-    var url = 'beers.json';
-
-  	$.getJSON(url, function(data){
-
-      for (i = 0; i < data.beers.length; i++) {
-        var name = data.beers[i].name;
-        var abv = data.beers[i].abv;
-        var descript = data.beers[i].descript;
-        $('select').append('<option value="'+name+'">'+name+'</option>');
-        //var text_value = $('.beers').val();
-
-      }
-
-  	});
-
-		var fruits = ['apple', 'banana', 'grapes', 'mango', 'orange'];
-
-		//Array filters items based on search criteria (query)
-
-		function filterItems(query) {
-		    return fruits.filter(function(el) {
-		     return el.toLowerCase().indexOf(query.toLowerCase()) > -1;
-		    })
-		}
-
-
-		console.log(filterItems('ap')); // ['apple', 'grapes']
-		console.log(filterItems('an')); // ['banana', 'mango', 'orange']
-
-
-  });
-
-	</script>
 
   </body>
 </html>
