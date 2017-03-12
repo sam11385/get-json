@@ -123,66 +123,66 @@ $(document).ready(function(){
   }
 
   // Weather
-  var weatherCities = {
-    atl: {
-      weatherDiv: '.atl .wx span',
-      iconDiv: '.atl .w-icon',
-      tempDiv: '.atl .temp span',
-      timeDiv: '.atl .clock span',
-      timeZone: 'America/New_York',
-      weatherUrl: 'http://api.openweathermap.org/data/2.5/weather?zip=30307,us&appid=6ba9fe7b01ace29efd87f6336dcd299b'
-    },
-    pit: {
-      weatherDiv: '.pit .wx span',
-      iconDiv: '.pit .w-icon',
-      tempDiv: '.pit .temp span',
-      timeDiv: '.pit .clock span',
-      timeZone: 'America/New_York',
-      weatherUrl: 'http://api.openweathermap.org/data/2.5/weather?zip=15108,us&appid=6ba9fe7b01ace29efd87f6336dcd299b'
-    },
-    sur: {
-      weatherDiv: '.sur .wx span',
-      iconDiv: '.sur .w-icon',
-      tempDiv: '.sur .temp span',
-      timeDiv: '.sur .clock span',
-      timeZone: 'Asia/Colombo',
-      weatherUrl: 'http://api.openweathermap.org/data/2.5/weather?q=Surat&appid=6ba9fe7b01ace29efd87f6336dcd299b'
+  if ($('body').hasClass('weather')) {
+    var weatherCities = {
+      atl: {
+        weatherDiv: '.atl .wx span',
+        iconDiv: '.atl .w-icon',
+        tempDiv: '.atl .temp span',
+        timeDiv: '.atl .clock span',
+        timeZone: 'America/New_York',
+        weatherUrl: 'http://api.openweathermap.org/data/2.5/weather?zip=30307,us&appid=6ba9fe7b01ace29efd87f6336dcd299b'
+      },
+      pit: {
+        weatherDiv: '.pit .wx span',
+        iconDiv: '.pit .w-icon',
+        tempDiv: '.pit .temp span',
+        timeDiv: '.pit .clock span',
+        timeZone: 'America/New_York',
+        weatherUrl: 'http://api.openweathermap.org/data/2.5/weather?zip=15108,us&appid=6ba9fe7b01ace29efd87f6336dcd299b'
+      },
+      sur: {
+        weatherDiv: '.sur .wx span',
+        iconDiv: '.sur .w-icon',
+        tempDiv: '.sur .temp span',
+        timeDiv: '.sur .clock span',
+        timeZone: 'Asia/Colombo',
+        weatherUrl: 'http://api.openweathermap.org/data/2.5/weather?q=Surat&appid=6ba9fe7b01ace29efd87f6336dcd299b'
+      }
     }
-  }
 
-  function ToFahrenheit(temp) {
-    return (temp - 273) * 9 / 5 + 32;
-  }
+    function ToFahrenheit(temp) {
+      return (temp - 273) * 9 / 5 + 32;
+    }
 
-  for (var city in weatherCities) {
+    for (var city in weatherCities) {
 
-    (function (city) {
-      var weatherUrl = weatherCities[city].weatherUrl;
-      var weatherDiv = weatherCities[city].weatherDiv;
-      var tempDiv = weatherCities[city].tempDiv;
-      var iconDiv = weatherCities[city].iconDiv;
+      (function (city) {
+        var weatherUrl = weatherCities[city].weatherUrl;
+        var weatherDiv = weatherCities[city].weatherDiv;
+        var tempDiv = weatherCities[city].tempDiv;
+        var iconDiv = weatherCities[city].iconDiv;
 
-      $.getJSON(weatherUrl, function (data) {
-        for (var i in data.main) {
-          var temperature = data.main.temp.toFixed(0);
-          $(tempDiv).html(ToFahrenheit(temperature));
-        }
+        $.getJSON(weatherUrl, function (data) {
+          for (var i in data.main) {
+            var temperature = data.main.temp.toFixed(0);
+            $(tempDiv).html(ToFahrenheit(temperature));
+          }
 
-        for (var i in data.weather) {
-          var id = data.weather[i].main;
-          $(weatherDiv).html(id);
-          $(iconDiv).append('<img alt="' + id + '" src="http://openweathermap.org/img/w/' + data.weather[i].icon + '.png" />');
-        }
-      });
-    })(city);
+          for (var i in data.weather) {
+            var id = data.weather[i].main;
+            $(weatherDiv).html(id);
+            $(iconDiv).append('<img alt="' + id + '" src="http://openweathermap.org/img/w/' + data.weather[i].icon + '.png" />');
+          }
+        });
+      })(city);
+    }
   }
 
 
   // Football data
   // key 02a9c4b69c5c44ec9d669383b7fdd698
   // League Table example: http://api.football-data.org/v1/competitions/398/leagueTable
-
-
 
   // Vehicle data
   // key 467ku67s5u2f7wmbgd6ax286
@@ -207,20 +207,21 @@ $(document).ready(function(){
     $('#text_value').click(function() {
       var text_value = $("#text").val();
       if(text_value=='') {
-         alert("Enter A Food Type In Input Field");
+         alert("Enter A Show Input Field");
       } else {
-        var city = text_value;
-        var zomKey = '2baec02eae04283237c811b12ea1c01e';
-        var zomUrl = 'https://developers.zomato.com/api/v2.1/search?entity_type=city&q='+city+'&apikey='+zomKey+'';
+        const shows = text_value;
+        const tvShowsUrl = 'http://api.tvmaze.com/search/shows?q='+text_value+'';
+        const tvActorUrl = 'http://api.tvmaze.com/search/people?q='+text_value+'';
 
-        $.getJSON(zomUrl, function(data){
-          for ( var i in data.restaurants) {
-            var resRate = data.restaurants[i].restaurant.user_rating.rating_text;
-            var resName = data.restaurants[i].restaurant.name;
-            var hood = data.restaurants[i].restaurant.location.locality;
-            var menu = data.restaurants[i].restaurant.menu_url;
-            var featImg = data.restaurants[i].restaurant.featured_image;
-            $('.restaurants').append('<div class="resname"><h2>'+resName+'</h2> <div>(' + hood + ')</div> <div> <img src="'+ featImg +'"> </div> <div>Rating: ' + resRate + '</div> <div><a href="'+ menu+'">Menu</a></div></div>');
+        $.getJSON(tvShowsUrl, function(data){
+          for ( var i in data.show) {
+            // var menu = data.restaurants[i].restaurant.menu_url;
+            // var featImg = data.restaurants[i].restaurant.featured_image;
+
+            const showName = data.show;
+            console.log(showName);
+
+            $('.shows').append('<div class="show">'+showName+'</div>');
           }
         });
       }
