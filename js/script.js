@@ -217,7 +217,9 @@ $(document).ready(function(){
           for ( var i in data ) {
             var show = data[i].show.name;
             //var showImg = data[i].show.image.original;
-            $('.shows').append('<div class="movie-card"><div class="show-name">'+show+'</div></div>');
+            var showSum = data[i].show.summary;
+            //var showNetwork = data[i].show.network.name;
+            $('.shows').append('<div class="show-card"><div class="show-name"><h5>'+show+'</h5></div><div>'+showSum+'</div></div>');
           };
         });
 

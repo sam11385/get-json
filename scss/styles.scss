@@ -2,6 +2,7 @@
 @import "vars";
 @import "strava";
 @import "zomato";
+@import "tv";
 
 .card {
   text-align: center;
@@ -10,6 +11,7 @@
   padding: 2% 0;
   box-shadow: 1px 1px 2px #ccc;
 }
+
 
 .card span {
   font-weight: 600;
