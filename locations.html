@@ -4,16 +4,16 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<title>Get Weather in Locations</title>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
-		<link rel="stylesheet" href="styles.css">
+		<link rel="stylesheet" href="dist/styles.css">
 		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+		<script src="js/script.js"></script>
 	</head>
 	<body>
 
 	<div class="container">
 		<div class="row">
 			<div class="twelve columns">
-				<h3>Blue Sombrero Headquarters Location Weather Information</h3>
+				<h3>Multi Location Weather Information</h3>
 			</div>
 		</div>
 		<div class="row">
@@ -34,67 +34,6 @@
 			</div>
 		</div>
 	</div>
-
-	<script>
-	var atlWx = 'http://api.openweathermap.org/data/2.5/weather?zip=30307,us&appid=6ba9fe7b01ace29efd87f6336dcd299b';
-	var pitWx = 'http://api.openweathermap.org/data/2.5/weather?zip=15108,us&appid=6ba9fe7b01ace29efd87f6336dcd299b';
-	var surWx = 'http://api.openweathermap.org/data/2.5/weather?q=Surat&appid=6ba9fe7b01ace29efd87f6336dcd299b';
-
-	var atlTempDiv = '.atl .temp span';
-	var atlWxDiv = '.atl .wx span';
-
-	var pitTempDiv = '.pit .temp span';
-	var pitWxDiv = '.pit .wx span';
-
-	var surTempDiv = '.sur .temp span';
-	var surWxDiv = '.sur .wx span';
-
-	$.getJSON(atlWx, function(data){
-
-		for ( var i in data.main) {
-			var temperature = data.main.temp.toFixed(0);
-			$(atlTempDiv).html((temperature - 273) * 9 / 5 + 32);
-		}
-
-		for ( var i in data.weather) {
-			var id = data.weather[i].main;
-			var name = data.weather[i].description;
-			$(atlWxDiv).html(id);
-		}
-
-	});
-
-	$.getJSON(pitWx, function(data){
-
-		for ( var i in data.main) {
-			var temperature = data.main.temp.toFixed(0);
-			$(pitTempDiv).html((temperature - 273) * 9 / 5 + 32);
-		}
-
-		for ( var i in data.weather) {
-			var id = data.weather[i].main;
-			var name = data.weather[i].description;
-			$(pitWxDiv).html(id);
-		}
-
-	});
-
-	$.getJSON(surWx, function(data){
-
-		for ( var i in data.main) {
-			var temperature = data.main.temp.toFixed(0);
-			$(surTempDiv).html((temperature - 273) * 9 / 5 + 32);
-		}
-
-		for ( var i in data.weather) {
-			var id = data.weather[i].main;
-			var name = data.weather[i].description;
-			$(surWxDiv).html(id);
-		}
-
-	});
-
-	</script>
 
   </body>
 </html>

@@ -122,6 +122,62 @@ $(document).ready(function(){
     });
   }
 
+  // Weather
+  var weatherCities = {
+    atl: {
+      weatherDiv: '.atl .wx span',
+      iconDiv: '.atl .w-icon',
+      tempDiv: '.atl .temp span',
+      timeDiv: '.atl .clock span',
+      timeZone: 'America/New_York',
+      weatherUrl: 'http://api.openweathermap.org/data/2.5/weather?zip=30307,us&appid=6ba9fe7b01ace29efd87f6336dcd299b'
+    },
+    pit: {
+      weatherDiv: '.pit .wx span',
+      iconDiv: '.pit .w-icon',
+      tempDiv: '.pit .temp span',
+      timeDiv: '.pit .clock span',
+      timeZone: 'America/New_York',
+      weatherUrl: 'http://api.openweathermap.org/data/2.5/weather?zip=15108,us&appid=6ba9fe7b01ace29efd87f6336dcd299b'
+    },
+    sur: {
+      weatherDiv: '.sur .wx span',
+      iconDiv: '.sur .w-icon',
+      tempDiv: '.sur .temp span',
+      timeDiv: '.sur .clock span',
+      timeZone: 'Asia/Colombo',
+      weatherUrl: 'http://api.openweathermap.org/data/2.5/weather?q=Surat&appid=6ba9fe7b01ace29efd87f6336dcd299b'
+    }
+  }
+
+  function ToFahrenheit(temp) {
+    return (temp - 273) * 9 / 5 + 32;
+  }
+
+  for (var city in weatherCities) {
+
+    (function (city) {
+      var weatherUrl = weatherCities[city].weatherUrl;
+      var weatherDiv = weatherCities[city].weatherDiv;
+      var tempDiv = weatherCities[city].tempDiv;
+      var iconDiv = weatherCities[city].iconDiv;
+
+      $.getJSON(weatherUrl, function (data) {
+        for (var i in data.main) {
+          var temperature = data.main.temp.toFixed(0);
+          $(tempDiv).html(ToFahrenheit(temperature));
+        }
+
+        for (var i in data.weather) {
+          var id = data.weather[i].main;
+          $(weatherDiv).html(id);
+          $(iconDiv).append('<img alt="' + id + '" src="http://openweathermap.org/img/w/' + data.weather[i].icon + '.png" />');
+        }
+      });
+    })(city);
+  }
+
+
   // Football data
   // key 02a9c4b69c5c44ec9d669383b7fdd698
 
