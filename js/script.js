@@ -180,6 +180,7 @@ $(document).ready(function(){
 
   // Football data
   // key 02a9c4b69c5c44ec9d669383b7fdd698
+  // League Table example: http://api.football-data.org/v1/competitions/398/leagueTable
 
 
 
@@ -203,6 +204,27 @@ $(document).ready(function(){
   // Example of getting a schedule for a given date: http://api.tvmaze.com/schedule?country=US&date=2014-12-01
   // Example of searching for a tv actor: http://api.tvmaze.com/search/people?q=tim-allen
   if ($('body').hasClass('tv')) {
+    $('#text_value').click(function() {
+      var text_value = $("#text").val();
+      if(text_value=='') {
+         alert("Enter A Food Type In Input Field");
+      } else {
+        var city = text_value;
+        var zomKey = '2baec02eae04283237c811b12ea1c01e';
+        var zomUrl = 'https://developers.zomato.com/api/v2.1/search?entity_type=city&q='+city+'&apikey='+zomKey+'';
 
+        $.getJSON(zomUrl, function(data){
+          for ( var i in data.restaurants) {
+            var resRate = data.restaurants[i].restaurant.user_rating.rating_text;
+            var resName = data.restaurants[i].restaurant.name;
+            var hood = data.restaurants[i].restaurant.location.locality;
+            var menu = data.restaurants[i].restaurant.menu_url;
+            var featImg = data.restaurants[i].restaurant.featured_image;
+            $('.restaurants').append('<div class="resname"><h2>'+resName+'</h2> <div>(' + hood + ')</div> <div> <img src="'+ featImg +'"> </div> <div>Rating: ' + resRate + '</div> <div><a href="'+ menu+'">Menu</a></div></div>');
+          }
+        });
+      }
+
+    });
   }
 });
