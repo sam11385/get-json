@@ -974,10 +974,24 @@ nav {
   nav ul {
     display: flex; }
     nav ul li {
-      list-style: none; }
+      list-style: none;
+      border-left: 2px solid #ddd;
+      transform: skew(-15deg);
+      flex: 1 1 auto;
+      transition: 0.3s ease-in-out all;
+      background: #ccc;
+      background-size: 100% 200%; }
+      nav ul li:hover {
+        background-image: linear-gradient(to bottom, transparent 50%, #448ccb 50%, #448ccb 95%, #0072bc 95%);
+        background-position: bottom center; }
       nav ul li a {
-        padding: 1rem 2rem;
-        text-decoration: none; }
+        text-decoration: none;
+        color: #666;
+        display: block;
+        padding: 1em 2em;
+        transition: 0.3s ease-in-out all; }
+        nav ul li a:hover {
+          color: #fff; }
 
 .strava {
   font-size: .9rem;
@@ -995,7 +1009,7 @@ nav {
     margin: .5%;
     box-shadow: .5px .5px .5px .5px #ccc;
     padding: 1% 1.5%;
-    transition: 0.3s ease-in all; }
+    transition: 0.3s ease-in-out all; }
     .strava .stat:hover,
     .strava .ride:hover {
       transform: scale(1.03); }
@@ -1055,7 +1069,7 @@ nav {
     margin: .5%;
     box-shadow: .5px .5px .5px .5px #ccc;
     padding: 1% 1.5%;
-    transition: 0.3s ease-in all; }
+    transition: 0.3s ease-in-out all; }
     .tv .shows .show-card h5 {
       margin: 0 auto 5px; }
     .tv .shows .show-card:hover {

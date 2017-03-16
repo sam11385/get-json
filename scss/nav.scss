@@ -3,11 +3,28 @@ nav {
   justify-content: center;
   ul {
     display: flex;
+    
     li {
       list-style: none;
+      border-left: 2px solid #ddd;
+      transform: skew(-15deg);
+      flex: 1 1 auto;
+      transition: $transition;
+      background: #ccc;
+      background-size: 100% 200%;
+      &:hover {
+        background-image: linear-gradient(to bottom, transparent 50%, #448ccb 50%, #448ccb 95%, #0072bc 95%);
+        background-position: bottom center;
+      }
       a {
-        padding: 1rem 2rem;
         text-decoration: none;
+        color: #666;
+        display: block;
+        padding: 1em 2em;
+        transition: $transition;
+        &:hover {
+          color: #fff;
+        }
       }
     }
   }
