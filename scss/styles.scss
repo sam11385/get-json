@@ -1,5 +1,6 @@
 @import "skeleton";
 @import "vars";
+@import "nav";
 @import "strava";
 @import "zomato";
 @import "tv";
@@ -11,7 +12,6 @@
   padding: 2% 0;
   box-shadow: 1px 1px 2px #ccc;
 }
-
 
 .card span {
   font-weight: 600;
