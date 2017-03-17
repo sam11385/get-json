@@ -995,8 +995,8 @@ nav {
           color: #fff; }
 
 .strava {
-  font-size: .9rem;
-  line-height: 1.3rem; }
+  font-size: .9em;
+  line-height: 1.3em; }
   .strava .stats,
   .strava .rides {
     display: flex;
