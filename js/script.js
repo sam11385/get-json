@@ -1,4 +1,8 @@
 $(document).ready(function(){
+  // Click nav items to display sections
+  $('a.strava').click(function() {
+    $('body').addClass('strava');
+  })
 
   // strava
   if ($('body').hasClass('strava')) {
