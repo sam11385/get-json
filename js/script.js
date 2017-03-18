@@ -5,7 +5,7 @@ $(document).ready(function(){
     var samId = 10095088;
     var dadId = 20146501;
     var key = '237bdb3d2bf2cd7c036b588e2890d7e14565c048';
-    // Get an athlets activities
+    // Get an athletes activities
     var stravaActivities = 'https://www.strava.com/api/v3/athlete/activities?access_token='+key+'';
     // Get athletes profile information
     var stravaAthletes = 'https://www.strava.com/api/v3/athletes/'+samId+'?access_token='+key+'';
@@ -59,15 +59,11 @@ $(document).ready(function(){
     var url = 'https://api.punkapi.com/v2/beers';
 
   	$.getJSON(url, function(data){
-
       for (i = 0; i < data.beers.length; i++) {
         var name = data.beers[i].name;
         var abv = data.beers[i].abv;
         var descript = data.beers[i].descript;
-        // $('select').append('<option value="'+name+'">'+name+'</option>');
-
       }
-
   	});
   }
 
