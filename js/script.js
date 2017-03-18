@@ -1,6 +1,6 @@
 $(document).ready(function(){
   // Click nav items to display sections
-  $('a.strava').click(function() {
+  $('.nav-strava').click(function() {
     $('body').addClass('strava');
   })
 
