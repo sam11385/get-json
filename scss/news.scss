@@ -7,27 +7,40 @@
       color: #fff;
       text-align: center;
       padding: 5%;
+      border-radius: 10px;
       select {
         width: 71%;
         border: none;
       }
     }
     button {
+      padding: 1%;
+      border-color: deeppink;
+      transition: $transition;
       span {
         position: relative;
-        padding-left: 1.25em;
+        padding-left: 2em;
         &:before {
           content: "";
           position: absolute;
           left: 0;
-          top: 0.25em;
-          width: 1em;
-          height: 0.15em;
-          background: black;
+          width: 2em;
+          height: 0.35em;
+          background: deeppink;
           box-shadow:
-            0 0.25em 0 0 black,
-            0 0.5em 0 0 black;
-        }  
+            0 0.5em 0 0 deeppink,
+            0 1em 0 0 deeppink;
+            transition: $transition;
+        }
+        &:hover:before {
+          background: blue;
+          box-shadow:
+            0 0.5em 0 0 blue,
+            0 1em 0 0 blue;
+        }
+      }
+      &:hover {
+        border-color: blue;
       }
       .news-nav{
         display: none;
