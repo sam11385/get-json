@@ -238,6 +238,9 @@ $(document).ready(function(){
     $('.refresh').click(function(){
       location.reload();
     });
+    $('.layout').click(function(){
+      $('.stories').toggleClass('full');
+    });
 
     $.getJSON(newsSourceUrl, function(data){
       for (var i in data.sources){

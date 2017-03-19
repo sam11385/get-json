@@ -1001,7 +1001,16 @@ nav {
   color: #fff;
   text-align: center;
   padding: 5%;
-  border-radius: 10px; }
+  border-radius: 10px;
+  animation: fadeIn 2s; }
+
+@keyframes fadeIn {
+  0% {
+    opacity: .25; }
+  50% {
+    opacity: .75; }
+  100% {
+    opacity: 1; } }
   .news .container .selection select {
     width: 71%;
     border: none; }
@@ -1009,7 +1018,8 @@ nav {
 .news .container button {
   padding: 1%;
   border-color: deeppink;
-  transition: 0.3s ease-in-out all; }
+  transition: 0.3s ease-in-out all;
+  position: relative; }
   .news .container button span {
     position: relative;
     padding-left: 2em; }
@@ -1030,7 +1040,25 @@ nav {
   .news .container button .news-nav {
     display: none; }
     .news .container button .news-nav.active {
-      display: block; }
+      display: block;
+      background: white;
+      z-index: 1;
+      position: absolute;
+      width: 200px;
+      border: 1px solid deeppink;
+      border-radius: 5px;
+      top: 38px;
+      left: -2px; }
+    .news .container button .news-nav li {
+      list-style: none;
+      margin: 20px 0 20px 20px;
+      padding: 0;
+      text-align: left;
+      cursor: pointer;
+      line-height: 1;
+      transition: 0.3s ease-in-out all; }
+      .news .container button .news-nav li:hover {
+        color: blue; }
 
 .news .container .stories {
   display: flex;
@@ -1050,6 +1078,9 @@ nav {
       margin-bottom: 0; }
     .news .container .stories .story .article-link a {
       text-decoration: none; }
+  .news .container .stories.full .story {
+    width: 100%;
+    max-width: 100%; }
 
 .strava {
   font-size: .9em;

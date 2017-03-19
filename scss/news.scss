@@ -8,6 +8,18 @@
       text-align: center;
       padding: 5%;
       border-radius: 10px;
+      animation: fadeIn 2s;
+      @keyframes fadeIn {
+          0% {
+              opacity: .25;
+          }
+          50% {
+             opacity: .75;
+          }
+          100% {
+             opacity: 1;
+          }
+      }
       select {
         width: 71%;
         border: none;
@@ -17,6 +29,7 @@
       padding: 1%;
       border-color: deeppink;
       transition: $transition;
+      position: relative;
       span {
         position: relative;
         padding-left: 2em;
@@ -46,6 +59,26 @@
         display: none;
         &.active {
           display: block;
+          background: white;
+          z-index: 1;
+          position: absolute;
+          width: 200px;
+          border: 1px solid deeppink;
+          border-radius: 5px;
+          top: 38px;
+          left: -2px;
+        }
+        li {
+          list-style: none;
+          margin: 20px 0 20px 20px;
+          padding: 0;
+          text-align: left;
+          cursor: pointer;
+          line-height: 1;
+          transition: $transition;
+          &:hover {
+            color: blue;
+          }
         }
       }
     }
@@ -76,6 +109,12 @@
           a {
             text-decoration: none;
           }
+        }
+      }
+      &.full{
+        .story {
+          width: 100%;
+          max-width: 100%;
         }
       }
     }
