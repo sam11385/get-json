@@ -235,7 +235,7 @@ $(document).ready(function(){
     var newsSourceUrl = 'https://newsapi.org/v1/sources?language=en';
 
     $('button').hide();
-    $('button').click(function(){
+    $('.refresh').click(function(){
       location.reload();
     });
 
@@ -249,6 +249,9 @@ $(document).ready(function(){
       $('select').on('change', function (e){
         $('.selection').fadeOut();
         $('button').fadeIn();
+        $('button').click(function() {
+          $('.news-nav').toggleClass('active');
+        });
         $('.stories').fadeIn();
         var theSource = $(this).val();
         var newsArticlesUrl = 'https://newsapi.org/v1/articles?source='+theSource+'&apiKey='+newsKey+'';
