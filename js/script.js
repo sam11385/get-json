@@ -233,19 +233,20 @@ $(document).ready(function(){
   if ($('body').hasClass('news')) {
     var newsKey = '1e92dc106d5b4734b5e11c359c8eb0e4';
     var newsSourceUrl = 'https://newsapi.org/v1/sources';
-    var selectSource = '';
-    var newsArticlesUrl = 'https://newsapi.org/v1/articles?source='+selectSource+'&apiKey='+newsKey+'';
 
     $.getJSON(newsSourceUrl, function(data){
       for (var i in data.sources){
         var newsSource = data.sources[i].name;
-        $('select').append('<option value="'+newsSource+'">'+newsSource+'</option>');
+        var newsSourceId = data.sources[i].id;
+        $('select').append('<option value="'+newsSourceId+'">'+newsSource+'</option>');
 
         $('select').on('change', function (e){
-          $('.source').text($(this).val());
+          var theSource = $(this).val();
+          var newsArticlesUrl = 'https://newsapi.org/v1/articles?source='+theSource+'&apiKey='+newsKey+'';
+          console.log(newsArticlesUrl);
         });
 
-        
+
       }
 
 
