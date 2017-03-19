@@ -232,8 +232,17 @@ $(document).ready(function(){
   // Link to sources: https://newsapi.org/v1/sources
   if ($('body').hasClass('news')) {
     var newsKey = '1e92dc106d5b4734b5e11c359c8eb0e4';
-    var newsSource = 'https://newsapi.org/v1/sources';
-    var newsArticles = 'https://newsapi.org/v1/articles?source=associated-press&apiKey=1e92dc106d5b4734b5e11c359c8eb0e4';
+    var newsSourceUrl = 'https://newsapi.org/v1/sources';
+    var selectSource = '';
+    var newsArticlesUrl = 'https://newsapi.org/v1/articles?source='+selectSource+'&apiKey='+newsKey+'';
+
+    $.getJSON(newsSourceUrl, function(data){
+      for (var i in data.sources){
+        var newsSource = data.sources[i].name;
+        $('select').append('<option value="">'+newsSource+'</option>');
+      }
+
+    });
   }
 
 });
