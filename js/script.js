@@ -243,7 +243,13 @@ $(document).ready(function(){
         $('select').on('change', function (e){
           var theSource = $(this).val();
           var newsArticlesUrl = 'https://newsapi.org/v1/articles?source='+theSource+'&apiKey='+newsKey+'';
-          console.log(newsArticlesUrl);
+          // (newsArticlesUrl, function(data){
+          //   for (var i in data.articles){
+          //     var articleAuthor = data.articles[i].author;
+          //     $('.stories').append(articleAuthor);
+          //     return true
+          //   }
+          // });
         });
 
 
