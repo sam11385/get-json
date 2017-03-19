@@ -239,8 +239,16 @@ $(document).ready(function(){
     $.getJSON(newsSourceUrl, function(data){
       for (var i in data.sources){
         var newsSource = data.sources[i].name;
-        $('select').append('<option value="">'+newsSource+'</option>');
+        $('select').append('<option value="'+newsSource+'">'+newsSource+'</option>');
+
+        $('select').on('change', function (e){
+          $('.source').text($(this).val());
+        });
+
+        
       }
+
+
 
     });
   }
