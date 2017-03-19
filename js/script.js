@@ -232,9 +232,7 @@ $(document).ready(function(){
   // Link to sources: https://newsapi.org/v1/sources
   if ($('body').hasClass('news')) {
     var newsKey = '1e92dc106d5b4734b5e11c359c8eb0e4';
-    var newsSourceUrl = 'https://newsapi.org/v1/sources';
-
-
+    var newsSourceUrl = 'https://newsapi.org/v1/sources?language=en';
 
     $.getJSON(newsSourceUrl, function(data){
       for (var i in data.sources){
@@ -251,11 +249,15 @@ $(document).ready(function(){
         var theSource = $(this).val();
         var newsArticlesUrl = 'https://newsapi.org/v1/articles?source='+theSource+'&apiKey='+newsKey+'';
 
-        //https://newsapi.org/v1/articles?source=bbc-sport&apiKey=1e92dc106d5b4734b5e11c359c8eb0e4
         $.getJSON(newsArticlesUrl, function(data){
           for (var i in data.articles){
-            var articleTitle = data.articles[i].title;
-            $('.stories').append('<div>'+articleTitle+'</div>');
+            const articleAuthor = data.articles[i].author;
+            const articleTitle = data.articles[i].title;
+            const articleDescription = data.articles[i].description;
+            const articleStoryUrl = data.articles[i].url;
+            const articleUrlToImage = data.articles[i].urlToImage;
+            const articlePublished = data.articles[i].publishedAt;
+            $('.stories').append('<div class="story"><div class="title"><h2>'+articleTitle+'</h2></div><div class="description"><p>'+articleDescription+'</p></div><div class="article-link"><a href="'+articleStoryUrl+'" target="_blank">Full Story</a></div></div>');
           }
         });
 

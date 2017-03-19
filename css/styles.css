@@ -997,6 +997,22 @@ nav {
 .news .container select {
   width: 300px; }
 
+.news .container .stories {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around; }
+  .news .container .stories .story {
+    max-width: 400px;
+    margin-bottom: 20px; }
+    .news .container .stories .story .title h2 {
+      font-size: 1.4rem;
+      line-height: 1.3;
+      margin: 0 0 .5rem; }
+    .news .container .stories .story .description p {
+      margin-bottom: 0; }
+    .news .container .stories .story .article-link a {
+      text-decoration: none; }
+
 .strava {
   font-size: .9em;
   line-height: 1.3em; }
