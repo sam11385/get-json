@@ -230,5 +230,10 @@ $(document).ready(function(){
   // NEWS - API Key: 1e92dc106d5b4734b5e11c359c8eb0e4
   // Example of news articles from Assoc Press: https://newsapi.org/v1/articles?source=associated-press&apiKey=1e92dc106d5b4734b5e11c359c8eb0e4
   // Link to sources: https://newsapi.org/v1/sources
-  
+  if ($('body').hasClass('news')) {
+    var newsKey = '1e92dc106d5b4734b5e11c359c8eb0e4';
+    var newsSource = 'https://newsapi.org/v1/sources';
+    var newsArticles = 'https://newsapi.org/v1/articles?source=associated-press&apiKey=1e92dc106d5b4734b5e11c359c8eb0e4';
+  }
+
 });

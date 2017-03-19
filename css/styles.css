@@ -994,6 +994,9 @@ nav {
         nav ul li a:hover {
           color: #fff; }
 
+.news .container select {
+  width: 300px; }
+
 .strava {
   font-size: .9em;
   line-height: 1.3em; }
