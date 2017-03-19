@@ -1,8 +1,18 @@
 .news{
   .container {
-    select {
-      width: 300px;
+    .selection {
+      width: 550px;
+      margin: 4% auto 0;
+      background: deeppink;
+      color: #fff;
+      text-align: center;
+      padding: 5%;
+      select {
+        width: 71%;
+        border: none;
+      }
     }
+
     .stories {
       display: flex;
       flex-flow: row wrap;

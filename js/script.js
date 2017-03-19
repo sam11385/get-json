@@ -234,6 +234,7 @@ $(document).ready(function(){
     var newsKey = '1e92dc106d5b4734b5e11c359c8eb0e4';
     var newsSourceUrl = 'https://newsapi.org/v1/sources?language=en';
 
+    $('button').hide();
     $('button').click(function(){
       location.reload();
     });
@@ -246,6 +247,9 @@ $(document).ready(function(){
       }
 
       $('select').on('change', function (e){
+        $('.selection').fadeOut();
+        $('button').fadeIn();
+        $('.stories').fadeIn();
         var theSource = $(this).val();
         var newsArticlesUrl = 'https://newsapi.org/v1/articles?source='+theSource+'&apiKey='+newsKey+'';
         $.getJSON(newsArticlesUrl, function(data){

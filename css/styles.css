@@ -994,8 +994,16 @@ nav {
         nav ul li a:hover {
           color: #fff; }
 
-.news .container select {
-  width: 300px; }
+.news .container .selection {
+  width: 550px;
+  margin: 4% auto 0;
+  background: deeppink;
+  color: #fff;
+  text-align: center;
+  padding: 5%; }
+  .news .container .selection select {
+    width: 71%;
+    border: none; }
 
 .news .container .stories {
   display: flex;
