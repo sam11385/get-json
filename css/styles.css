@@ -1002,13 +1002,11 @@ nav {
   text-align: center;
   padding: 5%;
   border-radius: 10px;
-  animation: fadeIn 2s; }
+  animation: fadeIn 3s; }
 
 @keyframes fadeIn {
   0% {
-    opacity: .25; }
-  50% {
-    opacity: .75; }
+    opacity: 0; }
   100% {
     opacity: 1; } }
   .news .container .selection select {
