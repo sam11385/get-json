@@ -234,30 +234,40 @@ $(document).ready(function(){
     var newsKey = '1e92dc106d5b4734b5e11c359c8eb0e4';
     var newsSourceUrl = 'https://newsapi.org/v1/sources';
 
+
+
     $.getJSON(newsSourceUrl, function(data){
       for (var i in data.sources){
         var newsSource = data.sources[i].name;
         var newsSourceId = data.sources[i].id;
         $('select').append('<option value="'+newsSourceId+'">'+newsSource+'</option>');
 
-        $('select').on('change', function (e){
-          var theSource = $(this).val();
-          var newsArticlesUrl = 'https://newsapi.org/v1/articles?source='+theSource+'&apiKey='+newsKey+'';
-          // (newsArticlesUrl, function(data){
-          //   for (var i in data.articles){
-          //     var articleAuthor = data.articles[i].author;
-          //     $('.stories').append(articleAuthor);
-          //     return true
-          //   }
-          // });
-        });
 
 
       }
 
+      $('select').on('change', function (e){
+
+        var theSource = $(this).val();
+        var newsArticlesUrl = 'https://newsapi.org/v1/articles?source='+theSource+'&apiKey='+newsKey+'';
+
+        //https://newsapi.org/v1/articles?source=bbc-sport&apiKey=1e92dc106d5b4734b5e11c359c8eb0e4
+        $.getJSON(newsArticlesUrl, function(data){
+          for (var i in data.articles){
+            var articleTitle = data.articles[i].title;
+            $('.stories').append('<div>'+articleTitle+'</div>');
+          }
+        });
+
+      });
+
 
 
     });
+
+
+
+
   }
 
 });
