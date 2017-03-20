@@ -192,7 +192,6 @@ $(document).ready(function(){
   // http://api.edmunds.com/api/vehicle/v2/mazda?fmt=json&api_key=467ku67s5u2f7wmbgd6ax286
 
   // Docs http://developer.edmunds.com/api-documentation/overview/
-
   if ($('body').hasClass('cars')) {
 
   }

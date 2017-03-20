@@ -83,13 +83,17 @@
     .stories {
       display: flex;
       flex-flow: row wrap;
-      justify-content: space-around;
+      justify-content: space-between;;
       .story {
-        max-width: 400px;
+        max-width: 390px;
         margin-bottom: 20px;
         border: 1px solid #eef;
-        padding: .5% 1% 0;
+        padding: 1% 1.5% 0;
         border-radius: 8px;
+        transition: $transition;
+        &:hover {
+          transform: scale(1.02);
+        }
         .title{
           h2 {
             font-size: 1.4rem;

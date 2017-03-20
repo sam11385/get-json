@@ -1061,13 +1061,16 @@ nav {
 .news .container .stories {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around; }
+  justify-content: space-between; }
   .news .container .stories .story {
-    max-width: 400px;
+    max-width: 390px;
     margin-bottom: 20px;
     border: 1px solid #eef;
-    padding: .5% 1% 0;
-    border-radius: 8px; }
+    padding: 1% 1.5% 0;
+    border-radius: 8px;
+    transition: 0.3s ease-in-out all; }
+    .news .container .stories .story:hover {
+      transform: scale(1.02); }
     .news .container .stories .story .title h2 {
       font-size: 1.4rem;
       line-height: 1.3;
