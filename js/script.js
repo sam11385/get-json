@@ -186,6 +186,7 @@ $(document).ready(function(){
 
   // Vehicle data
   // key 467ku67s5u2f7wmbgd6ax286
+  // new key via mashery h3h3u35545ntgcyzg2k2smvv
   // http://api.edmunds.com/api/vehicle/v2/makes?fmt=json&state=new&api_key=
 
   // Example of getting all mazda vehicles
@@ -195,6 +196,11 @@ $(document).ready(function(){
   if ($('body').hasClass('cars')) {
     const carKey = '467ku67s5u2f7wmbgd6ax286';
     const carMakesUrl = 'http://api.edmunds.com/api/vehicle/v2/makes?fmt=json&api_key='+carKey+'';
+
+    $('.refresh').click(function(){
+      location.reload();
+    });
+
     $.getJSON(carMakesUrl, function(data){
       for (var i in data.makes){
         var carMake = data.makes[i].name;
