@@ -193,7 +193,15 @@ $(document).ready(function(){
 
   // Docs http://developer.edmunds.com/api-documentation/overview/
   if ($('body').hasClass('cars')) {
-
+    const carKey = '467ku67s5u2f7wmbgd6ax286';
+    const carMakeUrl = 'http://api.edmunds.com/api/vehicle/v2/makes?fmt=json&api_key='+carKey+'';
+    $.getJSON(carMakeUrl, function(data){
+      for (var i in data.makes){
+        var carMake = data.makes[i].name;
+        var carValue = data.makes[i].niceName;
+        $('select').append('<option value="'+carValue+'">'+carMake+'</option>');
+      }
+    });
   }
 
 
