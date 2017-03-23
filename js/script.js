@@ -6,34 +6,34 @@ $(document).ready(function(){
 
   // strava
   if ($('body').hasClass('strava')) {
-    var samId = 10095088;
-    var dadId = 20146501;
-    var key = '237bdb3d2bf2cd7c036b588e2890d7e14565c048';
+    const samId = 10095088;
+    const dadId = 20146501;
+    const key = '237bdb3d2bf2cd7c036b588e2890d7e14565c048';
     // Get an athletes activities
-    var stravaActivities = 'https://www.strava.com/api/v3/athlete/activities?access_token='+key+'';
+    const stravaActivities = 'https://www.strava.com/api/v3/athlete/activities?access_token='+key+'';
     // Get athletes profile information
-    var stravaAthletes = 'https://www.strava.com/api/v3/athletes/'+samId+'?access_token='+key+'';
+    const stravaAthletes = 'https://www.strava.com/api/v3/athletes/'+samId+'?access_token='+key+'';
     //Get athletes stats
-    var stravaStats = 'https://www.strava.com/api/v3/athletes/'+samId+'/stats?access_token='+key+'';
+    const stravaStats = 'https://www.strava.com/api/v3/athletes/'+samId+'/stats?access_token='+key+'';
     // convert meters to miles
-    var dist = 0.000621371;
+    const dist = 0.000621371;
 
     $.getJSON(stravaActivities, function(data){
       for (let i = 0; i < data.length; i++) {
-        var distance = data[i].distance;
+        const distance = data[i].distance;
         // initialize a date format, convert it to a normal date
-        var initDate = new Date(data[i].start_date);
-        var day = initDate.getDate();
-        var month = initDate.getMonth();
-        var year = initDate.getFullYear();
-        var stravaDate = (month+1) + "/" + day + "/" + year;
-        var movingTime = data[i].moving_time / 60;
-        var movingRnd = Math.round( movingTime * 10 ) / 10;
-        var rideName = data[i].name;
-        var rndDistance = Math.round(distance * dist * 10) / 10;
-        var speed = data[i].average_speed;
-        var spdConvert = speed * 2.23694;
-        var rndSpeedConv = Math.round( spdConvert * 10 ) / 10;
+        const initDate = new Date(data[i].start_date);
+        const day = initDate.getDate();
+        const month = initDate.getMonth();
+        const year = initDate.getFullYear();
+        const stravaDate = (month+1) + "/" + day + "/" + year;
+        const movingTime = data[i].moving_time / 60;
+        const movingRnd = Math.round( movingTime * 10 ) / 10;
+        const rideName = data[i].name;
+        const rndDistance = Math.round(distance * dist * 10) / 10;
+        const speed = data[i].average_speed;
+        const spdConvert = speed * 2.23694;
+        const rndSpeedConv = Math.round( spdConvert * 10 ) / 10;
         $('.rides').append('<div class="ride"><div class="ride-name">' + rideName + '</div><div class="ride-date">Date: ' + stravaDate + ' </div> <div class="ride-distance">Distance: ' + rndDistance + ' miles</div><div class="spd">Avg Speed: ' + rndSpeedConv + ' mph</div> <div class="moving">Time: ' + movingRnd + ' minutes</div></div>');
       }
 
@@ -41,17 +41,17 @@ $(document).ready(function(){
 
     $.getJSON(stravaStats, function(data){
       // Longest ride
-      var longestRide = data.biggest_ride_distance * dist;
+      const longestRide = data.biggest_ride_distance * dist;
       // year to date rides
-      var ytdRides = data.ytd_ride_totals.count;
-      var ytdDist = Math.round(data.ytd_ride_totals.distance * dist * 10) / 10;
-      var ytdMoveTime = data.ytd_ride_totals.moving_time / 60;
-      var goalPercent = Math.floor((ytdDist / 1000) * 100);
+      const ytdRides = data.ytd_ride_totals.count;
+      const ytdDist = Math.round(data.ytd_ride_totals.distance * dist * 10) / 10;
+      const ytdMoveTime = data.ytd_ride_totals.moving_time / 60;
+      const goalPercent = Math.floor((ytdDist / 1000) * 100);
       // All time rides
-      var allRides = data.all_ride_totals.count;
-      var allDistance = Math.round(data.all_ride_totals.distance * dist * 10) / 10;
-      var allMoveTime = data.all_ride_totals.moving_time / 60;
-      var allTimeLong = Math.round(data.biggest_ride_distance * dist * 10) / 10;
+      const allRides = data.all_ride_totals.count;
+      const allDistance = Math.round(data.all_ride_totals.distance * dist * 10) / 10;
+      const allMoveTime = data.all_ride_totals.moving_time / 60;
+      const allTimeLong = Math.round(data.biggest_ride_distance * dist * 10) / 10;
 
       $('.stats').append('<div class="stat"><div class="ytd"><h4>This Year:</h4><div class="ytd-count">2017 Rides: '+ytdRides+'</div><div class="ytd-dist">2017 Distance: '+ytdDist+' miles</div><div class="goal">2017 goal: 1000 miles <div>'+goalPercent+'% of the way to goal</div></div></div></div><div class="stat"><div class="ytd"><h4>All Time:</h4><div>All Time Rides: '+allRides+'</div><div>All Time Distance: '+allDistance+' miles</div><div>Longest Ride: '+allTimeLong+' miles</div></div></div>')
     });
@@ -75,21 +75,21 @@ $(document).ready(function(){
   // zomato
   if ($('body').hasClass('zomato')) {
     $('#text_value').click(function() {
-      var text_value = $("#text").val();
+      const text_value = $("#text").val();
       if(text_value=='') {
          alert("Enter A Food Type In Input Field");
       } else {
-        var city = text_value;
-        var zomKey = '2baec02eae04283237c811b12ea1c01e';
-        var zomUrl = 'https://developers.zomato.com/api/v2.1/search?entity_type=city&q='+city+'&apikey='+zomKey+'';
+        const city = text_value;
+        const zomKey = '2baec02eae04283237c811b12ea1c01e';
+        const zomUrl = 'https://developers.zomato.com/api/v2.1/search?entity_type=city&q='+city+'&apikey='+zomKey+'';
 
         $.getJSON(zomUrl, function(data){
           for ( let i = 0; i < data.restaurants.length; i++ ) {
-            var resRate = data.restaurants[i].restaurant.user_rating.rating_text;
-            var resName = data.restaurants[i].restaurant.name;
-            var hood = data.restaurants[i].restaurant.location.locality;
-            var menu = data.restaurants[i].restaurant.menu_url;
-            var featImg = data.restaurants[i].restaurant.featured_image;
+            const resRate = data.restaurants[i].restaurant.user_rating.rating_text;
+            const resName = data.restaurants[i].restaurant.name;
+            const hood = data.restaurants[i].restaurant.location.locality;
+            const menu = data.restaurants[i].restaurant.menu_url;
+            const featImg = data.restaurants[i].restaurant.featured_image;
             $('.restaurants').append('<div class="resname"><h2>'+resName+'</h2> <div>(' + hood + ')</div> <div> <img src="'+ featImg +'"> </div> <div>Rating: ' + resRate + '</div> <div><a href="'+ menu+'">Menu</a></div></div>');
           }
         });
@@ -229,20 +229,20 @@ $(document).ready(function(){
   // Example of searching for a tv actor: http://api.tvmaze.com/search/people?q=tim-allen
   if ($('body').hasClass('tv')) {
     $('#text_value').click(function() {
-      var text_value = $("#text").val();
+      const text_value = $("#text").val();
       if(text_value=='') {
          alert("Enter A Show Input Field");
       } else {
-        var shows = text_value;
-        var tvShowsUrl = 'http://api.tvmaze.com/search/shows?q='+text_value+'';
-        var tvActorUrl = 'http://api.tvmaze.com/search/people?q='+text_value+'';
+        const shows = text_value;
+        const tvShowsUrl = 'http://api.tvmaze.com/search/shows?q='+text_value+'';
+        const tvActorUrl = 'http://api.tvmaze.com/search/people?q='+text_value+'';
 
         $.getJSON(tvShowsUrl, function(data){
           for ( let i = 0; i < data.length; i++ ) {
-            var show = data[i].show.name;
-            //var showImg = data[i].show.image.original;
-            var showSum = data[i].show.summary;
-            //var showNetwork = data[i].show.network.name;
+            const show = data[i].show.name;
+            //const showImg = data[i].show.image.original;
+            const showSum = data[i].show.summary;
+            //const showNetwork = data[i].show.network.name;
             $('.shows').append('<div class="show-card"><div class="show-name"><h5>'+show+'</h5></div><div>'+showSum+'</div></div>');
           };
         });
@@ -256,8 +256,8 @@ $(document).ready(function(){
   // Example of news articles from Assoc Press: https://newsapi.org/v1/articles?source=associated-press&apiKey=1e92dc106d5b4734b5e11c359c8eb0e4
   // Link to sources: https://newsapi.org/v1/sources
   if ($('body').hasClass('news')) {
-    var newsKey = '1e92dc106d5b4734b5e11c359c8eb0e4';
-    var newsSourceUrl = 'https://newsapi.org/v1/sources?language=en';
+    const newsKey = '1e92dc106d5b4734b5e11c359c8eb0e4';
+    const newsSourceUrl = 'https://newsapi.org/v1/sources?language=en';
 
     $('button').hide();
     $('.refresh').click(function(){
@@ -269,8 +269,8 @@ $(document).ready(function(){
 
     $.getJSON(newsSourceUrl, function(data){
       for (var i in data.sources){
-        var newsSource = data.sources[i].name;
-        var newsSourceId = data.sources[i].id;
+        const newsSource = data.sources[i].name;
+        const newsSourceId = data.sources[i].id;
         $('select').append('<option value="'+newsSourceId+'">'+newsSource+'</option>');
       }
 
@@ -281,8 +281,8 @@ $(document).ready(function(){
           $('.news-nav').toggleClass('active');
         });
         $('.stories').fadeIn();
-        var theSource = $(this).val();
-        var newsArticlesUrl = 'https://newsapi.org/v1/articles?source='+theSource+'&apiKey='+newsKey+'';
+        const theSource = $(this).val();
+        const newsArticlesUrl = 'https://newsapi.org/v1/articles?source='+theSource+'&apiKey='+newsKey+'';
         $.getJSON(newsArticlesUrl, function(data){
           for (var i in data.articles){
             const articleAuthor = data.articles[i].author;
