@@ -63,7 +63,7 @@ $(document).ready(function(){
     var url = 'https://api.punkapi.com/v2/beers';
 
   	$.getJSON(url, function(data){
-      for (i = 0; i < data.beers.length; i++) {
+      for (let i = 0; i < data.beers.length; i++) {
         var name = data.beers[i].name;
         var abv = data.beers[i].abv;
         var descript = data.beers[i].descript;
@@ -202,6 +202,7 @@ $(document).ready(function(){
     });
 
     $.getJSON(carMakesUrl, function(data){
+
       for (var i in data.makes){
         var carMake = data.makes[i].name;
         var carValue = data.makes[i].niceName;
@@ -237,7 +238,7 @@ $(document).ready(function(){
         var tvActorUrl = 'http://api.tvmaze.com/search/people?q='+text_value+'';
 
         $.getJSON(tvShowsUrl, function(data){
-          for ( var i in data ) {
+          for ( let i = 0; i < data.length; i++ ) {
             var show = data[i].show.name;
             //var showImg = data[i].show.image.original;
             var showSum = data[i].show.summary;
