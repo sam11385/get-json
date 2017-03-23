@@ -19,7 +19,7 @@ $(document).ready(function(){
     var dist = 0.000621371;
 
     $.getJSON(stravaActivities, function(data){
-      for (var i in data) {
+      for (let i = 0; i < data.length; i++) {
         var distance = data[i].distance;
         // initialize a date format, convert it to a normal date
         var initDate = new Date(data[i].start_date);
@@ -84,7 +84,7 @@ $(document).ready(function(){
         var zomUrl = 'https://developers.zomato.com/api/v2.1/search?entity_type=city&q='+city+'&apikey='+zomKey+'';
 
         $.getJSON(zomUrl, function(data){
-          for ( var i in data.restaurants) {
+          for ( let i = 0; i < data.restaurants.length; i++ ) {
             var resRate = data.restaurants[i].restaurant.user_rating.rating_text;
             var resName = data.restaurants[i].restaurant.name;
             var hood = data.restaurants[i].restaurant.location.locality;
