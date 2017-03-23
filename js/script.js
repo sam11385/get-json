@@ -298,4 +298,13 @@ $(document).ready(function(){
     });
   }
 
+  // Random user API
+  if ($('body').hasClass('users')){
+    const userUrl = 'https://randomuser.me/api/';
+
+    $.getJSON(userUrl, function(data){
+      console.log(data);
+    });
+  }
+
 });
