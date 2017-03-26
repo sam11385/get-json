@@ -6,10 +6,10 @@ https://en.wikipedia.org/wiki/List_of_open_APIs
 https://github.com/abhishekbanthia/Public-APIs
 
 <ul> Successfully Done So Far:
-Strava
-OpenWeatherMap
-Zomato
-Untappd
-TV Shows
-NewsAPI
+<li>Strava</li>
+<li>OpenWeatherMap</li>
+<li>Zomato</li>
+<li>Untappd</li>
+<li>TV Shows</li>
+<li>NewsAPI</li>
 </ul>
