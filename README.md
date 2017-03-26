@@ -1,4 +1,6 @@
-## Working on perfecting pulling all of the JSON data.
+## The GetJSON Project
+
+Working on perfecting pulling all of the JSON data.
 
 <ul><strong>Some great free API lists:</strong>
   <li>https://github.com/toddmotto/public-apis</li>
