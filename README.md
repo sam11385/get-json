@@ -1,12 +1,12 @@
-Working on perfecting pulling all of the JSON data.
+## Working on perfecting pulling all of the JSON data.
 
-<ul>Some great free API lists:
+<ul><strong>Some great free API lists:</strong>
   <li>https://github.com/toddmotto/public-apis</li>
   <li>https://en.wikipedia.org/wiki/List_of_open_APIs</li>
   <li>https://github.com/abhishekbanthia/Public-APIs</li>
 </ul>
 
-<ul> Successfully Done So Far:
+<ul> <strong>Successfully Done So Far:</strong>
   <li>Strava</li>
   <li>OpenWeatherMap</li>
   <li>Zomato</li>
