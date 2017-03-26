@@ -301,7 +301,6 @@ $(document).ready(function(){
   // Random user API
   if ($('body').hasClass('users')){
     const userUrl = 'https://randomuser.me/api/';
-
     $.getJSON(userUrl, function(data){
       console.log(data);
     });
@@ -311,15 +310,24 @@ $(document).ready(function(){
   // example: https://api.nytimes.com/svc/search/v2/articlesearch.json?format=json&api-key=e8948383f1d941adb668209fcb229b35
   // key = e8948383f1d941adb668209fcb229b35
 
-  // Random user API
+  // search example = http://api.nytimes.com/svc/search/v2/articlesearch.json?q=soccer&api-key=e8948383f1d941adb668209fcb229b35
   if ($('body').hasClass('nytimes')){
-    const nytKey = 'e8948383f1d941adb668209fcb229b35';
-    const nytUrl = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?format=json&api-key='+nytKey+'';
-
-    $.getJSON(nytUrl, function(data){
-      console.log(data);
+    $('.nyt-submit').click(function(){
+      const nytSearchVal = $('.nyt-search').val();
+      if (nytSearchVal=='') {
+        alert('Search for something.')
+      } else {
+        const nytKey = 'e8948383f1d941adb668209fcb229b35';
+        const nytUrl = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?format=json&api-key='+nytKey+'';
+        const nytSearchUrl = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?q='+nytSearchVal+'&api-key='+nytKey+'';
+        $.getJSON(nytSearchUrl, function(data){
+          for (let i = 0; i < data.response.docs.length; i++){
+            const nytSnippet = data.response.docs[i].snippet;
+            $('.nytimes-news').append('<div>'+nytSnippet+'</div>');
+          }
+        });
+      }
     });
   }
-
 
 });

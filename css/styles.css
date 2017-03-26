@@ -1165,6 +1165,26 @@ nav {
     .tv .shows .show-card:hover {
       transform: scale(1.03); }
 
+.nytimes input[type=text] {
+  width: 40%;
+  transition: width 0.5s ease-in-out; }
+
+.nytimes input[type=text]:focus {
+  width: 60%; }
+
+.nytimes .nytimes-news {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around; }
+  .nytimes .nytimes-news div {
+    max-width: 24%;
+    padding: 1%;
+    margin: .5%;
+    box-shadow: .5px .5px .5px .5px #ccc;
+    transition: 0.3s ease-in-out all; }
+    .nytimes .nytimes-news div:hover {
+      transform: scale(1.03); }
+
 .card {
   text-align: center;
   border: 1px solid #f1f1f1;
