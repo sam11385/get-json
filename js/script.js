@@ -307,4 +307,19 @@ $(document).ready(function(){
     });
   }
 
+  // NYTimes api
+  // example: https://api.nytimes.com/svc/search/v2/articlesearch.json?format=json&api-key=e8948383f1d941adb668209fcb229b35
+  // key = e8948383f1d941adb668209fcb229b35
+
+  // Random user API
+  if ($('body').hasClass('nytimes')){
+    const nytKey = 'e8948383f1d941adb668209fcb229b35';
+    const nytUrl = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?format=json&api-key='+nytKey+'';
+
+    $.getJSON(nytUrl, function(data){
+      console.log(data);
+    });
+  }
+
+
 });
