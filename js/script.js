@@ -300,10 +300,11 @@ $(document).ready(function(){
 
   // Random user API
   if ($('body').hasClass('users')){
-    const userUrl = 'https://randomuser.me/api/';
+    const userUrl = 'https://randomuser.me/api/?results=10';
     $.getJSON(userUrl, function(data){
       console.log(data);
     });
+
   }
 
   // NYTimes api
