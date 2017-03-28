@@ -15,4 +15,5 @@ Working on perfecting pulling all of the JSON data.
   <li>Untappd</li>
   <li>TV Shows</li>
   <li>NewsAPI</li>
+  <li>New York Times</li>
 </ul>
