@@ -100,28 +100,8 @@ $(document).ready(function(){
 
   // Stocks
   if ($('body').hasClass('stocks')) {
-    // $('.stocks .card').hide()
-    // $('#stock_value').click(function(){
-    //   var stockValue = $("#stock").val();
-    //   if(stockValue =='') {
-    //      alert("Enter A Stock Symbol");
-    //   } else {
-    //     $('.stocks .card').show()
-    //     var symbol = stockValue;
-    //     var dksStock = 'http://dev.markitondemand.com/MODApis/Api/v2/Quote/jsonp?symbol='+symbol+'&callback=?';
-    //     $.getJSON(dksStock, function(data){
-    //       $('.dks-name').append('<div>'+data.Name+'</div>');
-    //       $('.dks-symbol').append('<div>'+data.Symbol+'</div>');
-    //       $('.dks-price').append('<div>'+data.LastPrice+'</div>');
-    //       $('.dks-ytd').append('<div>'+data.ChangeYTD+'</div>');
-    //       $('.dks-high').append('<div>'+data.High+'</div>');
-    //       $('.dks-low').append('<div>'+data.Low+'</div>');
-    //       $('.dks-open').append('<div>'+data.Open+'</div>');
-    //     });
-    //   }
-    // });
-    var symbol = 'dks';
-    var stockUrl = 'http://dev.markitondemand.com/MODApis/Api/v2/Quote/jsonp?symbol='+symbol+'&callback=?';
+    const symbol = 'dks';
+    const stockUrl = 'http://dev.markitondemand.com/MODApis/Api/v2/Quote/jsonp?symbol='+symbol+'&callback=?';
     $.getJSON(stockUrl, function(data){
       $('.'+symbol+'-name').append('<div>'+data.Name+'</div>');
       $('.'+symbol+'-symbol').append('<div>'+data.Symbol+'</div>');
@@ -132,43 +112,14 @@ $(document).ready(function(){
       $('.'+symbol+'-open').append('<div>'+data.Open+'</div>');
     });
 
-    // const stockSymbols = {
-    //   dks: {
-    //     stockName: 'dks-name',
-    //     stockSym: 'dks-symbol',
-    //     stockPrice: 'dks-price',
-    //     stockHigh: 'dks-high',
-    //     stockLow: 'dks-low',
-    //     stockOpen: 'dks-open',
-    //     stockUrl: 'http://dev.markitondemand.com/MODApis/Api/v2/Quote/jsonp?symbol=dks&callback=?'
-    //   },
-    //   yhoo: {
-    //     stockName: 'yhoo-name',
-    //     stockSym: 'yhoo-symbol',
-    //     stockPrice: 'yhoo-price',
-    //     stockHigh: 'yhoo-high',
-    //     stockLow: 'yhoo-low',
-    //     stockOpen: 'yhoo-open',
-    //     stockUrl: 'http://dev.markitondemand.com/MODApis/Api/v2/Quote/jsonp?symbol=yhoo&callback=?'
-    //   }
+    // const stockReq = new XMLHttpRequest();
+    // stockReq.open('GET','http://dev.markitondemand.com/MODApis/Api/v2/Quote/jsonp?symbol=dks&callback=?',true)
+    // stockReq.onload = function() {
+    //   const stocks = jsonp.parse(stockReq.responseText);
+    //   console.log(stocks);
     // }
-    //
-    // for (var stock in stockSymbols) {
-    //   (function (stock) {
-    //     var stockUrl = stockSymbols[stock].stockUrl;
-    //     var stockDiv = stockSymbols[stock].stockDiv;
-    //     var stockSym = stockSymbols[stock].stockSym;
-    //     var stockPrice = stockSymbols[stock].stockPrice;
-    //     var stockHigh = stockSymbols[stock].stockHigh;
-    //     var stockLow = stockSymbols[stock].stockLow;
-    //     var stockOpen = stockSymbols[stock].stockOpen;
-    //
-    //     $.getJSON(stockUrl, function (data) {
-    //       $(stockDiv).html(data.Symbol);
-    //       console.log(stockDiv);
-    //     });
-    //   })(stock);
-    // }
+    // stockReq.send();
+
   }
 
   // Weather
