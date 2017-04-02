@@ -348,4 +348,9 @@ $(document).ready(function(){
     });
   }
 
+
+  // Flickr
+  // Key: fe2b00007676770451fa8b4bb61bdef2
+  // Secret: 7d7066088738ef96
+
 });
