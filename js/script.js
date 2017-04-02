@@ -317,9 +317,15 @@ $(document).ready(function(){
 
   // Random user API
   if ($('body').hasClass('users')){
-    const userUrl = 'https://randomuser.me/api/?results=10';
+    const userUrl = 'https://randomuser.me/api/?results=20';
     $.getJSON(userUrl, function(data){
-      console.log(data);
+      //console.log(data.results[0].gender);
+      for (let i = 0; i < data.results.length; i++) {
+        const authImg = data.results[i].picture.large;
+        const authFirstName = data.results[i].name.first;
+        const authLastName = data.results[i].name.last;
+          $('.authors').append('<div class="the-user"><div class="user-name"><span>'+authFirstName+' </span><span>'+authLastName+'</span></div><img src="'+authImg+'"></div>');
+      }
     });
 
   }
@@ -352,5 +358,6 @@ $(document).ready(function(){
   // Flickr
   // Key: fe2b00007676770451fa8b4bb61bdef2
   // Secret: 7d7066088738ef96
+  // ex: https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=bdfc10546fd80c9fbb0fbe67cd0f9c4e&woe_id=2357024&format=json&api_sig=a29bf9674e11ee1fd5e5b97f9ac45b7f
 
 });
