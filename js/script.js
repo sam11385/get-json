@@ -184,6 +184,23 @@ $(document).ready(function(){
   // key 02a9c4b69c5c44ec9d669383b7fdd698
   // League Table example: http://api.football-data.org/v1/competitions/398/leagueTable
 
+  if ($('body').hasClass('soccer')) {
+    const soccerKey = '02a9c4b69c5c44ec9d669383b7fdd698';
+
+    $.ajax({
+      headers: { 'X-Auth-Token': soccerKey },
+      url: 'http://api.football-data.org/v1/fixtures?timeFrame=n1',
+      dataType: 'json',
+      type: 'GET',
+    }).done(function(response) {
+      // do something with the response, e.g. isolate the id of a linked resource
+      var regex = /.*?(\d+)$/; // the ? makes the first part non-greedy
+      var res = regex.exec(response.fixtures[0]._links.awayTeam.href);
+      var teamId = res[1];
+      console.log(teamId);
+    });
+  }
+
   // Vehicle data
   // key 467ku67s5u2f7wmbgd6ax286
   // new key via mashery h3h3u35545ntgcyzg2k2smvv
