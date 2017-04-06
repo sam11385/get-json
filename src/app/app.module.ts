@@ -12,7 +12,9 @@ import { NewsComponent } from './news/news.component';
 import { ZomatoComponent } from './zomato/zomato.component';
 
 const appRoutes: Routes = [
-  { path: 'random-user', component: RandomUserComponent }
+  { path: 'random-user', component: RandomUserComponent },
+  { path: 'news', component: NewsComponent },
+  { path: 'zomato', component: ZomatoComponent }
 ];
 
 @NgModule({
