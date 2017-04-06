@@ -10,6 +10,12 @@ import { StravaComponent } from './strava/strava.component';
 import { RandomUserComponent } from './random-user/random-user.component';
 import { NewsComponent } from './news/news.component';
 import { ZomatoComponent } from './zomato/zomato.component';
+import { CarsComponent } from './cars/cars.component';
+import { NytimesComponent } from './nytimes/nytimes.component';
+import { WeatherComponent } from './weather/weather.component';
+import { StocksComponent } from './stocks/stocks.component';
+import { UntappdComponent } from './untappd/untappd.component';
+import { TvComponent } from './tv/tv.component';
 
 const appRoutes: Routes = [
   { path: 'random-user', component: RandomUserComponent },
@@ -24,7 +30,13 @@ const appRoutes: Routes = [
     StravaComponent,
     RandomUserComponent,
     NewsComponent,
-    ZomatoComponent
+    ZomatoComponent,
+    CarsComponent,
+    NytimesComponent,
+    WeatherComponent,
+    StocksComponent,
+    UntappdComponent,
+    TvComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

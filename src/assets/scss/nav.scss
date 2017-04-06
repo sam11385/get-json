@@ -12,9 +12,14 @@ nav {
       transition: $transition;
       background: #ccc;
       background-size: 100% 200%;
+      &.active,
       &:hover {
         background-image: linear-gradient(to bottom, transparent 50%, #448ccb 50%, #448ccb 95%, #0072bc 95%);
         background-position: bottom center;
+        color: #fff;
+      }
+      &.active a {
+        color: #fff;
       }
       a {
         text-decoration: none;
@@ -25,9 +30,6 @@ nav {
         transition: $transition;
         &:hover {
           color: #fff;
-        }
-        &.active {
-          color: red;
         }
       }
     }
