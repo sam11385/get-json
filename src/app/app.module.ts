@@ -5,11 +5,19 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { StravaComponent } from './strava/strava.component';
+import { RandomUserComponent } from './random-user/random-user.component';
+import { NewsComponent } from './news/news.component';
+import { ZomatoComponent } from './zomato/zomato.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationComponent
+    NavigationComponent,
+    StravaComponent,
+    RandomUserComponent,
+    NewsComponent,
+    ZomatoComponent
   ],
   imports: [
     BrowserModule,

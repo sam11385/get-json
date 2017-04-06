@@ -327,7 +327,6 @@ $(document).ready(function(){
           $('.authors').append('<div class="the-user"><div class="user-name"><span>'+authFirstName+' </span><span>'+authLastName+'</span></div><img src="'+authImg+'"></div>');
       }
     });
-
   }
 
   // NYTimes api
