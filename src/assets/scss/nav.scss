@@ -26,6 +26,9 @@ nav {
         &:hover {
           color: #fff;
         }
+        &.active {
+          color: red;
+        }
       }
     }
   }

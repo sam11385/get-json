@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
@@ -10,6 +10,10 @@ import { StravaComponent } from './strava/strava.component';
 import { RandomUserComponent } from './random-user/random-user.component';
 import { NewsComponent } from './news/news.component';
 import { ZomatoComponent } from './zomato/zomato.component';
+
+const appRoutes: Routes = [
+  { path: 'random-user', component: RandomUserComponent }
+];
 
 @NgModule({
   declarations: [
@@ -21,6 +25,7 @@ import { ZomatoComponent } from './zomato/zomato.component';
     ZomatoComponent
   ],
   imports: [
+    RouterModule.forRoot(appRoutes),
     BrowserModule,
     FormsModule,
     HttpModule
