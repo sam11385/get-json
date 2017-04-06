@@ -1,0 +1,35 @@
+.zomato {
+  .resname {
+    width: 32%;
+    float: left;
+    height: 500px;
+    border: 1px solid;
+    margin-right: 1%;
+    margin-bottom: 2%;
+    padding: 2% 0 1%;
+    text-align: center;
+  }
+  .resname img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+  }
+
+  .card {
+    text-align: center;
+    border: 1px solid #f1f1f1;
+    border-radius: 1px;
+    padding: 2% 0;
+    box-shadow: 1px 1px 2px #ccc;
+  }
+
+  .card span {
+    font-weight: 600;
+    font-size: 16px;
+  }
+
+  h3{
+    text-align: center;
+  }
+
+}

@@ -1,0 +1,26 @@
+.nytimes {
+  input[type=text] {
+      width: 40%;
+      transition: width 0.5s ease-in-out;
+  }
+
+  input[type=text]:focus {
+      width: 60%;
+  }
+
+  .nytimes-news {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    div {
+      max-width: 24%;
+      padding: 1%;
+      margin: .5%;
+      box-shadow: .5px .5px .5px .5px #ccc;
+      transition: $transition;
+      &:hover {
+        transform: scale(1.03);
+      }
+    }
+  }
+}

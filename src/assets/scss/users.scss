@@ -1,0 +1,40 @@
+.users {
+
+  .authors {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+
+    .the-user {
+      width: 20%;
+      margin: 0 10px 40px 0;
+      background: #20b2aa;
+      text-align: center;
+      padding: 2%;
+      border-radius: 5px;
+      transition: $transition;
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      .user-name {
+        margin-bottom: 2%;
+      }
+
+      img {
+        border: 5px solid;
+        border-radius: 50%;
+        padding: 5px;
+        width: 100%;
+        max-width: 80%;
+      }
+
+      @media (max-width: $mobile) {
+        width: 40%;
+      }
+
+    }
+
+  }
+
+}
