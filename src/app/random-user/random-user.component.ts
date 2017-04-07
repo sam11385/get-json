@@ -10,14 +10,16 @@ import 'rxjs/Rx';
 export class RandomUserComponent implements OnInit {
   private users = [];
   constructor(http: Http) {
-    http.get('http://jsonplaceholder.typicode.com/users/')
-    .flatMap((data) => data.json())
+    http.get('https://randomuser.me/api/?results=20')
+    .map((data) => data.json())
       .subscribe((data) => {
-        this.users.push(data);
+        for (let i = 0; i < data.results.length; i++) {
+          const authFirstName = data.results[i].name.first;
+          //console.log(authFirstName);
+          this.users.push(authFirstName);
+        }
       });
   }
-
   ngOnInit() {
   }
-
 }
