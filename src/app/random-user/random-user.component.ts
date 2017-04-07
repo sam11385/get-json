@@ -15,8 +15,9 @@ export class RandomUserComponent implements OnInit {
       .subscribe((data) => {
         for (let i = 0; i < data.results.length; i++) {
           const authFirstName = data.results[i].name.first;
-          //console.log(authFirstName);
-          this.users.push(authFirstName);
+          const authLastName = data.results[i].name.last;
+          const authFullName = authFirstName +' '+ authLastName;
+          this.users.push(authFullName);
         }
       });
   }
