@@ -16,11 +16,13 @@ import { WeatherComponent } from './weather/weather.component';
 import { StocksComponent } from './stocks/stocks.component';
 import { UntappdComponent } from './untappd/untappd.component';
 import { TvComponent } from './tv/tv.component';
+import { RedditComponent } from './reddit/reddit.component';
 
 const appRoutes: Routes = [
   { path: 'random-user', component: RandomUserComponent },
   { path: 'news', component: NewsComponent },
-  { path: 'zomato', component: ZomatoComponent }
+  { path: 'zomato', component: ZomatoComponent },
+  { path: 'reddit', component: RedditComponent }
 ];
 
 @NgModule({
@@ -36,7 +38,8 @@ const appRoutes: Routes = [
     WeatherComponent,
     StocksComponent,
     UntappdComponent,
-    TvComponent
+    TvComponent,
+    RedditComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
