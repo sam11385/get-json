@@ -1,17 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {Http} from '@angular/http';
 import 'rxjs/Rx';
+import { MyDataService } from '../my-data.service';
+import { Post } from './post';
 
 @Component({
   selector: 'app-reddit',
   templateUrl: './reddit.component.html',
-  styleUrls: ['./reddit.component.scss']
+  styleUrls: ['./reddit.component.scss'],
+  providers: [MyDataService]
 })
 export class RedditComponent implements OnInit {
 
-  constructor() { }
+  @Input('subreddit') subreddit:string;
+
+  posts: Post[];
+
+  constructor( private data: MyDataService ) {}
 
   ngOnInit() {
+    this.data.fetchPosts(this.subreddit).subscribe(
+      posts => this.posts = posts
+    );
   }
 
 }
