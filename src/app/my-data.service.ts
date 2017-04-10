@@ -11,7 +11,8 @@ export class MyDataService {
   constructor(private jsonp: Jsonp) { }
 
   fetchPosts(subreddit:string):Observable<Post[]>{
-    return this.jsonp.get("https://www.reddit.com" + subreddit + "/.json?jsonp=JSONP_CALLBACK").map(data => {
+    //return this.jsonp.get("https://www.reddit.com" + subreddit + "/.json?jsonp=JSONP_CALLBACK").map(data => {
+    return this.jsonp.get("https://www.reddit.com/r/gunners.json?jsonp=JSONP_CALLBACK").map(data => {
         var posts:Post[] = [];
         let children = data.json().data.children;
         for(var i=0; i<children.length; i++) {
