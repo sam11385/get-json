@@ -1,7 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import {Http} from '@angular/http';
 import 'rxjs/Rx';
-import { MyDataService } from '../my-data.service';
+import { MyDataService } from './my-data.service';
 import { Post } from './post';
 
 @Component({

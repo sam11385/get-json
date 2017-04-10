@@ -3,7 +3,7 @@ import { Jsonp } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
-import { Post } from './reddit/post';
+import { Post } from './post';
 
 @Injectable()
 export class MyDataService {
@@ -16,10 +16,10 @@ export class MyDataService {
         var posts:Post[] = [];
         let children = data.json().data.children;
         for(var i=0; i<children.length; i++) {
-                let post:Post = new Post();
-                post.title = children[i].data.title;
-                post.url = children[i].data.url;
-                posts.push(post);
+          let post:Post = new Post();
+          post.title = children[i].data.title;
+          post.url = children[i].data.url;
+          posts.push(post);
         }
         return posts;
     });
