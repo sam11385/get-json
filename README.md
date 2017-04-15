@@ -1,4 +1,6 @@
 # GetJson
+Now that I've got "getting json" down on the front end, this project will work on the same concept but utilizing Angular.
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
 
