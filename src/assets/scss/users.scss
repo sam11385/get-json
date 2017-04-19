@@ -1,8 +1,7 @@
 .users {
 
   .authors {
-    display: flex;
-    flex-flow: row wrap;
+    @include flex(row, wrap)
     justify-content: space-around;
 
     .the-user {
