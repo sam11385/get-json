@@ -1,5 +1,5 @@
 # GetJson
-Now that I've got "getting json" down on the front end, this project will work on the same concept but utilizing Angular.
+Let's use the observables pattern to get a bunch of different JSON feeds in a SPA!
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
