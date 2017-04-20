@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import {Http} from '@angular/http';
-import 'rxjs/Rx';
+import { Observable } from 'rxjs/Observable';
 import { MyDataService } from './my-data.service';
 import { Post } from './post';
 
