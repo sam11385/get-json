@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Http} from '@angular/http';
+import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 
