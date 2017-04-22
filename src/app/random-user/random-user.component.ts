@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Http} from '@angular/http';
 import 'rxjs/Rx';
+import { trigger, style, transition, animate, group } from '@angular/core';
 
 @Component({
   selector: 'app-random-user',
