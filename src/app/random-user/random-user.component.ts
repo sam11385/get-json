@@ -18,6 +18,7 @@ export class RandomUserComponent implements OnInit {
           const authFirstName = data.results[i].name.first;
           const authLastName = data.results[i].name.last;
           const authFullName = authFirstName +' '+ authLastName;
+          //const authImg = data.results[i].picture.large;
           this.users.push(authFullName);
         }
       });
