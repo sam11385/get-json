@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { JsonpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RestangularModule, Restangular } from 'ngx-restangular';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 import { AppComponent } from './app.component';
@@ -43,7 +44,8 @@ const appRoutes: Routes = [
     StocksComponent,
     UntappdComponent,
     TvComponent,
-    RedditComponent
+    RedditComponent,
+    FlexLayoutModule
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
