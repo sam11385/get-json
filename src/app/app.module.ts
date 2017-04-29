@@ -44,8 +44,7 @@ const appRoutes: Routes = [
     StocksComponent,
     UntappdComponent,
     TvComponent,
-    RedditComponent,
-    FlexLayoutModule
+    RedditComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -53,7 +52,8 @@ const appRoutes: Routes = [
     FormsModule,
     HttpModule,
     JsonpModule,
-    RestangularModule.forRoot()
+    RestangularModule.forRoot(),
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
