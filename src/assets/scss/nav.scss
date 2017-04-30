@@ -1,6 +1,5 @@
 nav {
-  display: flex;
-  justify-content: center;
+  @include flex(row, wrap, center)
   ul {
     display: flex;
 

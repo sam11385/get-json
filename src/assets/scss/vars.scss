@@ -7,6 +7,7 @@ $transition: .3s ease-in-out all;
 @mixin flex($direction, $wrap) {
   display: flex;
   flex-flow: $direction $wrap;
+  justify-content: center;
 }
 
 @mixin scale($zoom) {
