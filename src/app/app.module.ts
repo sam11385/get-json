@@ -5,7 +5,6 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { JsonpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RestangularModule, Restangular } from 'ngx-restangular';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 
@@ -52,7 +51,6 @@ const appRoutes: Routes = [
     FormsModule,
     HttpModule,
     JsonpModule,
-    RestangularModule.forRoot(),
     FlexLayoutModule
   ],
   providers: [],
