@@ -6,7 +6,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { JsonpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import {MdButtonModule, MdCheckboxModule} from '@angular/material';
+import { MdButtonModule, MdCheckboxModule } from '@angular/material';
+import 'hammerjs';
 
 
 import { AppComponent } from './app.component';
