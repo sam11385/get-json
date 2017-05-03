@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { JsonpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import {MdButtonModule, MdCheckboxModule} from '@angular/material';
 
 
 import { AppComponent } from './app.component';
@@ -51,7 +52,9 @@ const appRoutes: Routes = [
     FormsModule,
     HttpModule,
     JsonpModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MdButtonModule, 
+    MdCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
