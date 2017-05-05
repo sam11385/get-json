@@ -14,12 +14,12 @@ export class RandomUserComponent implements OnInit {
     http.get('https://randomuser.me/api/?results=20').map((data) => data.json())
       .subscribe((data) => {
         for (let i = 0; i < data.results.length; i++) {
-          const authFirstName = data.results[i].name.first;
-          const authLastName = data.results[i].name.last;
-          const authFullName = authFirstName +' '+ authLastName;
-          const authImg = data.results[i].picture.large;
-          this.users.push(authFullName);
-          this.images.push(authImg);
+          // const authFirstName = data.results[i].name.first;
+          // const authLastName = data.results[i].name.last;
+          // const authFullName = authFirstName +' '+ authLastName;
+          // const authImg = data.results[i].picture.large;
+          this.users.push(data.results[i]);
+          // this.images.push(authImg);
         }
       });
   }

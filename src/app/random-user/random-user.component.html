@@ -1,6 +1,8 @@
 <div class="content">
   <div class="users">
-    <div *ngFor="let user of users">{{user}}</div>
-    <img *ngFor="let image of images" src="{{image}}">
+    <div class="the-user" *ngFor="let user of users">
+      <h4>{{user.name.first}} {{user.name.last}}</h4>
+      <img src="{{user.picture.large}}">
+    </div>
   </div>
 </div>
