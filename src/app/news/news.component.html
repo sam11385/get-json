@@ -1,17 +1,14 @@
 <div class="container">
-  <div class="selection">
-    <h4>Select your news source:</h4>
-    <select>
-      <option value="">Sources</option>
-    </select>
-  </div>
-  <button>
-    <span></span>
-    <ul class="news-nav">
-      <li class="refresh">New Source</li>
-      <li class="layout">Change Layout</li>
-    </ul>
-  </button>
-  <div class="source"></div>
-  <div class="stories"></div>
+
+  <md-select placeholder="News Source">
+    <md-option *ngFor="let food of foods" [value]="food.value">
+      
+    </md-option>
+  </md-select>
+
+  <md-card></md-card>
+
 </div>
+
+
+

@@ -4,9 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { JsonpModule } from '@angular/http';
+import { MaterialModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { MdButtonModule, MdCheckboxModule } from '@angular/material';
 import 'hammerjs';
 
 
@@ -50,12 +49,11 @@ const appRoutes: Routes = [
   imports: [
     RouterModule.forRoot(appRoutes),
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     HttpModule,
     JsonpModule,
-    FlexLayoutModule,
-    MdButtonModule, 
-    MdCheckboxModule
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
