@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Http, Response } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-news',
