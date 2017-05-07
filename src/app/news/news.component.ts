@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
+import { NewsApiService } from '../services/news-api.service';
 
 @Component({
   selector: 'app-news',
@@ -10,7 +11,7 @@ import { Observable } from 'rxjs/Observable';
 })
 export class NewsComponent implements OnInit {
 
-  //https://newsapi.org/v1/sources
+  
 
   constructor() { }
 

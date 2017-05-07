@@ -8,7 +8,6 @@ import { MaterialModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import 'hammerjs';
 
-
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { StravaComponent } from './strava/strava.component';
@@ -22,6 +21,8 @@ import { StocksComponent } from './stocks/stocks.component';
 import { UntappdComponent } from './untappd/untappd.component';
 import { TvComponent } from './tv/tv.component';
 import { RedditComponent } from './reddit/reddit.component';
+
+import { NewsApiService } from './services/news-api.service';
 
 const appRoutes: Routes = [
   { path: 'random-user', component: RandomUserComponent },
@@ -55,7 +56,7 @@ const appRoutes: Routes = [
     JsonpModule,
     MaterialModule
   ],
-  providers: [],
+  providers: [NewsApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
