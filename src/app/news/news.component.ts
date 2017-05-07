@@ -11,9 +11,8 @@ import { NewsApiService } from '../services/news-api.service';
 })
 export class NewsComponent implements OnInit {
 
-  
-
-  constructor() { }
+  articles = [];
+  constructor(private _newsApiService: NewsApiService) { }
 
   ngOnInit() {
   }
