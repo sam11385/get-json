@@ -6,4 +6,8 @@
 @import "assets/scss/tv";
 @import "assets/scss/users";
 @import "assets/scss/zomato";
-@import "assets/scss/skeleton";
+
+body {
+    margin: 0;
+    padding: 0;
+}
