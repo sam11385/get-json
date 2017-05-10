@@ -56,7 +56,10 @@ const appRoutes: Routes = [
     JsonpModule,
     MaterialModule
   ],
+  exports: [RouterModule],
   providers: [NewsApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+export const routedComponents = [RandomUserComponent, NewsComponent, ZomatoComponent, RedditComponent];

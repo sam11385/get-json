@@ -3,8 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { NewsApiService } from '../services/news-api.service';
-
-// import fade in animation
+import { Router, ActivatedRoute } from '@angular/router';
 import { fadeInAnimation } from '../_animations/index';
 
 @Component({
