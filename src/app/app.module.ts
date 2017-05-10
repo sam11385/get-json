@@ -25,6 +25,7 @@ import { RedditComponent } from './reddit/reddit.component';
 import { NewsApiService } from './services/news-api.service';
 
 const appRoutes: Routes = [
+  { path: '', pathMatch: 'full', component: NewsComponent},
   { path: 'random-user', component: RandomUserComponent },
   { path: 'news', component: NewsComponent },
   { path: 'zomato', component: ZomatoComponent },
