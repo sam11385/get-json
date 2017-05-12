@@ -1,9 +1,7 @@
 .tv {
   .shows {
-    display: flex;
-    flex-flow: row wrap;
+    @include flex(row, wrap);
     justify-content: space-around;
-    // height: 200px;
 
     .show-card {
       h5 {
