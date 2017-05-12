@@ -1,16 +1,13 @@
 <div class="container">
   <div class="row">
+    Search for images:
     <input type="search" [formControl]="searchControl">
   </div>
-  <div class="row">
-    <div *ngFor="let photo of photos">
-      <div class="col s4">
-        <div class="card">
-          <div class="card-image">
-            <img src={{photo.url}}>
-            <span class="card-title">{{photo.title}}</span>
-          </div>
-        </div>
+  <div class="cards">
+    <div class="card" *ngFor="let photo of photos">
+      <div class="card-image">
+        <img src={{photo.url}}>
+        <div class="card-title">{{photo.title}}</div>
       </div>
     </div>
   </div>
