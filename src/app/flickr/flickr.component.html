@@ -1,3 +1,17 @@
-<p>
-  flickr works!
-</p>
+<div class="container">
+  <div class="row">
+    <input type="search" [formControl]="searchControl">
+  </div>
+  <div class="row">
+    <div *ngFor="let photo of photos">
+      <div class="col s4">
+        <div class="card">
+          <div class="card-image">
+            <img src={{photo.url}}>
+            <span class="card-title">{{photo.title}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

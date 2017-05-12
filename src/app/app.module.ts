@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { JsonpModule } from '@angular/http';
@@ -30,7 +31,8 @@ const appRoutes: Routes = [
   { path: 'random-user', component: RandomUserComponent },
   { path: 'news', component: NewsComponent },
   { path: 'zomato', component: ZomatoComponent },
-  { path: 'reddit', component: RedditComponent }
+  { path: 'reddit', component: RedditComponent },
+  { path: 'flickr', component: FlickrComponent }
 ];
 
 @NgModule({
@@ -55,6 +57,8 @@ const appRoutes: Routes = [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
+    CommonModule,
     HttpModule,
     JsonpModule,
     MaterialModule
