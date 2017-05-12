@@ -23,6 +23,7 @@ import { TvComponent } from './tv/tv.component';
 import { RedditComponent } from './reddit/reddit.component';
 
 import { NewsApiService } from './services/news-api.service';
+import { FlickrComponent } from './flickr/flickr.component';
 
 const appRoutes: Routes = [
   { path: '', pathMatch: 'full', component: NewsComponent},
@@ -46,7 +47,8 @@ const appRoutes: Routes = [
     StocksComponent,
     UntappdComponent,
     TvComponent,
-    RedditComponent
+    RedditComponent,
+    FlickrComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
