@@ -1,5 +1,5 @@
 nav {
-  @include flex(row, wrap)
+  @include flex(row, wrap);
   
   ul {
     display: flex;

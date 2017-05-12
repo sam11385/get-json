@@ -13,7 +13,6 @@ import 'rxjs/Rx';
 export class FlickrComponent implements OnInit {
 
   searchControl = new FormControl();
-
   model$: Observable<any>;
   photos: Object;
   constructor(private _formBuilder: FormBuilder, private _flickrService: FlickrService) {
