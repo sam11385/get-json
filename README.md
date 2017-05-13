@@ -4,6 +4,7 @@ Let's use the observables pattern to get a bunch of different JSON feeds in a SP
 <ul>Working Projects:
 <li>Random User</li>
 <li>Reddit</li>
+<li>Flickr</li>
 </ul>
 
 <ul>In Progress:
