@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import {Http} from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/Rx';
+import "rxjs/add/operator/map";
+import "rxjs/add/operator/debounceTime";
+import "rxjs/add/operator/distinctUntilChanged"
 
 @Injectable()
 export class FlickrService {
@@ -10,7 +12,6 @@ export class FlickrService {
     constructor(private _http: Http) { };
 
     getResult(query: string) {
-        //console.log(query)
         let url = `https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${this.key}&tags=${query}&per_page=12&format=json&nojsoncallback=1`;
         return this._http
             .get(url)
