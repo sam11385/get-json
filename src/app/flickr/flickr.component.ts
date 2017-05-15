@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FlickrService } from '../services/flickr.service';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/Rx';
 
 @Component({
   selector: 'app-flickr',
