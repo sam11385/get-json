@@ -20,7 +20,7 @@ export class FlickrService {
                 if (val.stat === 'ok') {
                     return val.photos.photo.map((photo: any) => {
                         return {
-                            url: `https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}_m.jpg`,
+                            url: `https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg`,
                             title: photo.title
                         }
                     })
