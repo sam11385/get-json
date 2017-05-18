@@ -27,12 +27,13 @@ import { NewsApiService } from './services/news-api.service';
 import { FlickrComponent } from './flickr/flickr.component';
 
 const appRoutes: Routes = [
-  { path: '', pathMatch: 'full', component: NewsComponent},
+  { path: '', pathMatch: 'full', component: FlickrComponent},
   { path: 'random-user', component: RandomUserComponent },
   { path: 'news', component: NewsComponent },
   { path: 'zomato', component: ZomatoComponent },
   { path: 'reddit', component: RedditComponent },
-  { path: 'flickr', component: FlickrComponent }
+  { path: 'flickr', component: FlickrComponent },
+  { path: 'weather', component: WeatherComponent  }
 ];
 
 @NgModule({

@@ -7,13 +7,10 @@ const appid = '6ba9fe7b01ace29efd87f6336dcd299b';
 @Injectable()
 export class WeatherService {
 
-  // These details are straight from the JSON - picking out which ones we want to display
-  temp: number;
-  weather: number;
-  humidity: number;
-  temp_min: number;
-  temp_max: number;
-
   constructor(private http: Http) { }
+
+  getWeather(){
+    return this.http.get('http://api.openweathermap.org/data/2.5/weather?zip=15108,us&appid='+appid+'').toPromise().then(response => response.json());
+  }
 
 }
