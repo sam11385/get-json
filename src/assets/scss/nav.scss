@@ -1,5 +1,6 @@
 nav {
   @include flex(row, wrap);
+  margin-bottom: 20px;
   
   ul {
     display: flex;
