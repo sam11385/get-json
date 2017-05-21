@@ -1,6 +1,6 @@
 import { trigger, state, animate, transition, style } from '@angular/animations';
 
-export const slideInOutAnimation = 
+export const slideInOutAnimation =
     trigger('slideInOutAnimation', [
         state('*', style({
             position: 'fixed',
@@ -10,7 +10,7 @@ export const slideInOutAnimation =
             bottom: 0,
             backgroundColor: 'rgba(0,0,0,0.8)',
         })),
-        
+
         // route 'enter' transition
         transition(':enter', [
             style({

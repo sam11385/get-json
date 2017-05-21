@@ -25,6 +25,7 @@ import { RedditComponent } from './reddit/reddit.component';
 
 import { NewsApiService } from './services/news-api.service';
 import { FlickrComponent } from './flickr/flickr.component';
+import { TestComponent } from './test/test.component';
 
 const appRoutes: Routes = [
   { path: '', pathMatch: 'full', component: FlickrComponent},
@@ -51,7 +52,8 @@ const appRoutes: Routes = [
     UntappdComponent,
     TvComponent,
     RedditComponent,
-    FlickrComponent
+    FlickrComponent,
+    TestComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

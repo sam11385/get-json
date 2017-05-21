@@ -27,6 +27,6 @@ export class NewsApiService {
      .map(response => response.json());
    }
 
-   
+
 
 }

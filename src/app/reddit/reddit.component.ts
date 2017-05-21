@@ -13,7 +13,7 @@ import { Post } from './post';
 })
 export class RedditComponent implements OnInit {
 
-  @Input('subreddit') subreddit:string;
+  @Input('subreddit') subreddit: string;
 
   posts: Post[];
 

@@ -16,7 +16,7 @@ export class WeatherComponent implements OnInit {
   temp_min: number;
   temp_max: number;
 
-  constructor(private weather:WeatherService) { }
+  constructor(private weather: WeatherService) { }
 
   ngOnInit() {
     console.log(this.weather.getWeather().then(response => this.temp = response));

@@ -10,7 +10,7 @@ export class WeatherService {
   constructor(private http: Http) { }
 
   getWeather(){
-    return this.http.get('http://api.openweathermap.org/data/2.5/weather?zip=15108,us&appid='+appid+'').toPromise().then(response => response.json());
+    return this.http.get('http://api.openweathermap.org/data/2.5/weather?zip=15108,us&appid=' + appid + '').toPromise().then(response => response.json());
   }
 
 }
