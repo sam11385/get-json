@@ -24,9 +24,10 @@ import { TvComponent } from './tv/tv.component';
 import { RedditComponent } from './reddit/reddit.component';
 
 import { NewsApiService } from './services/news-api.service';
+import { FlickrService } from './services/flickr.service';
 import { FlickrComponent } from './flickr/flickr.component';
 
-const appRoutes: Routes = [
+const routes: Routes = [
   { path: '', pathMatch: 'full', component: FlickrComponent},
   { path: 'random-user', component: RandomUserComponent },
   { path: 'news', component: NewsComponent },
@@ -34,6 +35,7 @@ const appRoutes: Routes = [
   { path: 'reddit', component: RedditComponent },
   { path: 'flickr', component: FlickrComponent },
   { path: 'weather', component: WeatherComponent  }
+  //{ path: '**'} Catchall - like your 404
 ];
 
 @NgModule({
@@ -54,7 +56,7 @@ const appRoutes: Routes = [
     FlickrComponent
   ],
   imports: [
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(routes),
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
@@ -65,7 +67,7 @@ const appRoutes: Routes = [
     MaterialModule
   ],
   exports: [RouterModule],
-  providers: [NewsApiService],
+  providers: [NewsApiService, FlickrService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

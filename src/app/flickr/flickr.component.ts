@@ -6,8 +6,7 @@ import { Observable } from 'rxjs/Observable';
 @Component({
   selector: 'app-flickr',
   templateUrl: './flickr.component.html',
-  styleUrls: ['./flickr.component.scss'],
-  providers: [FlickrService]
+  styleUrls: ['./flickr.component.scss']
 })
 export class FlickrComponent implements OnInit {
 
