@@ -14,14 +14,14 @@ export class FlickrComponent implements OnInit {
   searchControl = new FormControl();
   model$: Observable<any>;
   photos: Object;
-  constructor(private _formBuilder: FormBuilder, private _flickrService: FlickrService) {
+  constructor(private _formBuilder: FormBuilder, private flickrService: FlickrService) {
   }
 
   ngOnInit() {
     this.searchControl.valueChanges
       .debounceTime(500)
       .distinctUntilChanged()
-      .switchMap((query: string) => this._flickrService.getResult(query))
+      .switchMap((query: string) => this.flickrService.getResult(query))
       .subscribe(value => {
         this.photos = value;
       });
