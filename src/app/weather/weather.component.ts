@@ -14,11 +14,12 @@ export class WeatherComponent implements OnInit {
   humidity: number;
   temp_min: number;
   temp_max: number;
+  response: string;
 
-  constructor(private weather: WeatherService) { }
-
+  constructor(private weather: WeatherService) {}
+  
   ngOnInit() {
-    
+    console.log(this.response);
   }
 
 }

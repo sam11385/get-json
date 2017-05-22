@@ -27,6 +27,7 @@ import { FlickrComponent } from './flickr/flickr.component';
 import { NewsApiService } from './services/news-api.service';
 import { FlickrService } from './services/flickr.service';
 import { WeatherService } from './services/weather.service';
+import { RedditService } from './services/reddit.service';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: FlickrComponent},
@@ -68,7 +69,7 @@ const routes: Routes = [
     MaterialModule
   ],
   exports: [RouterModule],
-  providers: [NewsApiService, FlickrService, WeatherService],
+  providers: [NewsApiService, FlickrService, WeatherService, RedditService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
