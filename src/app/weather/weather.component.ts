@@ -4,8 +4,7 @@ import { WeatherService } from '../services/weather.service';
 @Component({
   selector: 'app-weather',
   templateUrl: './weather.component.html',
-  styleUrls: ['./weather.component.scss'],
-  providers: [WeatherService]
+  styleUrls: ['./weather.component.scss']
 })
 export class WeatherComponent implements OnInit {
 
@@ -19,7 +18,7 @@ export class WeatherComponent implements OnInit {
   constructor(private weather: WeatherService) { }
 
   ngOnInit() {
-    console.log(this.weather.getWeather().then(response => this.temp = response));
+    
   }
 
 }

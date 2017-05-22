@@ -22,10 +22,11 @@ import { StocksComponent } from './stocks/stocks.component';
 import { UntappdComponent } from './untappd/untappd.component';
 import { TvComponent } from './tv/tv.component';
 import { RedditComponent } from './reddit/reddit.component';
+import { FlickrComponent } from './flickr/flickr.component';
 
 import { NewsApiService } from './services/news-api.service';
 import { FlickrService } from './services/flickr.service';
-import { FlickrComponent } from './flickr/flickr.component';
+import { WeatherService } from './services/weather.service';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: FlickrComponent},
@@ -67,7 +68,7 @@ const routes: Routes = [
     MaterialModule
   ],
   exports: [RouterModule],
-  providers: [NewsApiService, FlickrService],
+  providers: [NewsApiService, FlickrService, WeatherService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
