@@ -7,7 +7,7 @@ import 'rxjs/add/operator/distinctUntilChanged';
 
 @Injectable()
 export class FlickrService {
-    result$: Observable<any>;
+    result$: Observable<string[]>;
     key = 'fe2b00007676770451fa8b4bb61bdef2';
     constructor(private http: Http) { };
 
