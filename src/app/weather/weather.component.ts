@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { WeatherService } from '../services/weather.service';
+import { Observable } from 'rxjs/Observable';
+import { WeatherDetails } from './weather';
 
 @Component({
   selector: 'app-weather',
@@ -8,18 +10,12 @@ import { WeatherService } from '../services/weather.service';
 })
 export class WeatherComponent implements OnInit {
 
-  // These details are straight from the JSON - picking out which ones we want to display
-  temp: number;
-  weatherness: number;
-  humidity: number;
-  temp_min: number;
-  temp_max: number;
-  response: string;
+  @Input() zip: string;
+
+  weatherdetails: WeatherDetails[];
 
   constructor(private weather: WeatherService) {}
-  
-  ngOnInit() {
-    console.log(this.response);
-  }
+
+  ngOnInit() {}
 
 }
