@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class WeatherService {
-  result$: Observable<any>;
+  result$: Observable<string>;
   key = '6ba9fe7b01ace29efd87f6336dcd299b';
 
   constructor(private http: Http) { }
