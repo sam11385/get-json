@@ -2,14 +2,13 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
-import { MyDataService } from './my-data.service';
+import { RedditService } from '../services/reddit.service';
 import { Post } from './post';
 
 @Component({
   selector: 'app-reddit',
   templateUrl: './reddit.component.html',
-  styleUrls: ['./reddit.component.scss'],
-  providers: [MyDataService]
+  styleUrls: ['./reddit.component.scss']
 })
 export class RedditComponent implements OnInit {
 
@@ -17,7 +16,7 @@ export class RedditComponent implements OnInit {
 
   posts: Post[];
 
-  constructor( private data: MyDataService ) {}
+  constructor( private data: RedditService ) {}
 
   ngOnInit() {
     this.data.fetchPosts(this.subreddit).subscribe(

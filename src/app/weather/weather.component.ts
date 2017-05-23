@@ -10,11 +10,7 @@ import { WeatherDetails } from './weather';
 })
 export class WeatherComponent implements OnInit {
 
-  @Input() zip: string;
-
-  weatherdetails: WeatherDetails[];
-
-  constructor(private weather: WeatherService) {}
+  constructor() {}
 
   ngOnInit() {}
 
