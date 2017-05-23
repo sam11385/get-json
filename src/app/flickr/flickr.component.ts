@@ -11,7 +11,7 @@ import { Observable } from 'rxjs/Observable';
 export class FlickrComponent implements OnInit {
 
   searchControl = new FormControl();
-  model$: Observable<any>;
+  model$: Observable<string>;
   photos: Object;
   constructor(private _formBuilder: FormBuilder, private flickrService: FlickrService) {
   }
