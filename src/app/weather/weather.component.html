@@ -4,6 +4,8 @@
         <p>{{theWeather?.weather.description}}</p>
         
         <!--<span class="tempurature">{{theWeather?.main.temp}}</span>-->
-        <span class="tempurature">{{(theWeather?.main.temp - 273) * 9 / 5 + 32}} &deg;F</span>
+        <div class="tempurature">Current Temperature: {{((theWeather?.main.temp - 273) * 9 / 5 + 32).toFixed(0)}} &deg;F</div>
+        <div class="tempurature">Low: {{((theWeather?.main.temp_min - 273) * 9 / 5 + 32).toFixed(0)}} &deg;F</div>
+        <div class="tempurature">High: {{((theWeather?.main.temp_max - 273) * 9 / 5 + 32).toFixed(0)}} &deg;F</div>
     </md-card>
 </div>
