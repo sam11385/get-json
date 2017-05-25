@@ -1,23 +1,21 @@
 app-flickr {
-    .search {
-        margin: 20px auto 40px;
-        text-align: center;
-    }
+    
     .cards {
         @include flex(row, wrap);
         justify-content: space-between;
-        .card {
-            max-width: 300px;
+        .mat-input-container {
+            margin: 20px auto 40px;
+        }
+        .mat-card {
+            max-width: 250px;
             margin: 2% 1%;
-            .card-title {
-                max-width: 70%;
-            }
-            img {
+            .mat-card-image {
                 width: 100%;
                 height: auto;
+                margin: 0;
                 transition: $transition;
                 &:hover {
-                    @include scale(1.05);
+                    @include scale(1.04);
                 }
             }
         }
