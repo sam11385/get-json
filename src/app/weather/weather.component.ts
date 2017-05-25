@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { WeatherService } from '../services/weather.service';
 import { Observable } from 'rxjs/Observable';
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { WeatherService } from '../services/weather.service';
 import { WeatherModel, WeatherDetails, WeatherInfo, Sys } from './weather';
 
 @Component({
@@ -11,8 +12,9 @@ import { WeatherModel, WeatherDetails, WeatherInfo, Sys } from './weather';
 export class WeatherComponent implements OnInit {
 
   theWeather: WeatherModel;
+  searchControl = new FormControl();
 
-  constructor(private weather:WeatherService) { 
+  constructor(private weather:WeatherService, private FormBuilder: FormBuilder) { 
     // const temp = this.theWeather.main.temp;
     // function ToFahrenheit() {
     //   return (this.theWeather.main.temp - 273) * 9 / 5 + 32;
@@ -24,7 +26,7 @@ export class WeatherComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.weather.getWeather(32738).subscribe(response => this.theWeather = response);
+    this.weather.getWeather(30309).subscribe(response => this.theWeather = response);
   }
 
 }
