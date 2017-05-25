@@ -1,11 +1,9 @@
 <div class="content">
-    <md-card>
+    <md-card>   
+        <h4>{{theWeather?.name}}</h4>
+        <p>{{theWeather?.weather.description}}</p>
         
-        <h4>London</h4>
-        <p class="info">cloudy</p>
-        
-        <span class="tempurature">{{theWeather?.main.temp}}</span>
-        <div class="tempurature">{{theWeather?.main.humidity}}</div>
-        
+        <!--<span class="tempurature">{{theWeather?.main.temp}}</span>-->
+        <span class="tempurature">{{(theWeather?.main.temp - 273) * 9 / 5 + 32}} &deg;F</span>
     </md-card>
 </div>

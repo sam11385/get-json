@@ -1,11 +1,16 @@
 export class WeatherModel {
   main: WeatherDetails;
+  name: string;
+  weather: WeatherInfo;
 }
-// These details are straight from the JSON - picking out which ones we want to display
+
 export class WeatherDetails {
   temp: number;
   weather: number;
-  humidity: number;
   temp_min: number;
   temp_max: number;
+}
+
+export class WeatherInfo {
+  description: string;
 }
