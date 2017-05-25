@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import {WeatherModel, WeatherDetails, WeatherInfo } from '../weather/weather';
+import {WeatherModel, WeatherDetails, WeatherInfo, Sys } from '../weather/weather';
 
 const appid = '6ba9fe7b01ace29efd87f6336dcd299b';
 

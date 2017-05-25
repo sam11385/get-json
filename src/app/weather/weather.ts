@@ -2,6 +2,7 @@ export class WeatherModel {
   main: WeatherDetails;
   name: string;
   weather: WeatherInfo;
+  sys: Sys;
 }
 
 export class WeatherDetails {
@@ -13,4 +14,9 @@ export class WeatherDetails {
 
 export class WeatherInfo {
   description: string;
+}
+
+export class Sys {
+  sunrise: number;
+  sunset: number;
 }
