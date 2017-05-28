@@ -10,7 +10,6 @@ const appid = '6ba9fe7b01ace29efd87f6336dcd299b';
 @Injectable()
 export class WeatherService {
   result$: Observable<string[]>;
-  
 
   constructor(private http: Http) {
   }
