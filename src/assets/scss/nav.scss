@@ -14,40 +14,4 @@ app-navigation {
       }
     }    
   }
-
-  
-  // ul {
-  //   display: flex;
-  //   margin: 0;
-
-  //   li {
-  //     list-style: none;
-  //     border-left: 2px solid #ddd;
-  //     transform: skew(-15deg);
-  //     flex: 1 1 auto;
-  //     transition: $transition;
-  //     background: #ccc;
-  //     background-size: 100% 200%;
-  //     &.active,
-  //     &:hover {
-  //       background-image: linear-gradient(to bottom, transparent 50%, #448ccb 50%, #448ccb 95%, #0072bc 95%);
-  //       background-position: bottom center;
-  //       color: #fff;
-  //     }
-  //     &.active a {
-  //       color: #fff;
-  //     }
-  //     a {
-  //       text-decoration: none;
-  //       color: #666;
-  //       display: block;
-  //       padding: 1em 2em;
-  //       transform: skew(15deg);
-  //       transition: $transition;
-  //       &:hover {
-  //         color: #fff;
-  //       }
-  //     }
-  //   }
-  // }
 }
