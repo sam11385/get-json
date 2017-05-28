@@ -5,6 +5,8 @@ app-navigation {
     .mat-toolbar-row {
       @include flex(row, wrap);
       background: #00bcd4;
+      height: 100%;
+      padding: 1% 0;
       .mat-button {
         color: #fff;
         &.active {
