@@ -7,11 +7,10 @@ import { Post } from '../reddit/post';
 @Injectable()
 export class RedditService {
 
-  constructor(private jsonp: Jsonp) { }
+  constructor(private jsonp:Jsonp) { }
 
-  fetchPosts(subreddit: string): Observable<Post[]>{
-    //return this.jsonp.get("https://www.reddit.com" + subreddit + "/.json?jsonp=JSONP_CALLBACK").map(data => {
-    return this.jsonp.get('https://www.reddit.com/r/gunners.json?jsonp=JSONP_CALLBACK').map(data => {
+  fetchPosts(subreddit:string): Observable<Post[]>{
+    return this.jsonp.get("https://www.reddit.com" + subreddit + "/.json?jsonp=JSONP_CALLBACK").map(data => {
         const posts: Post[] = [];
         const children = data.json().data.children;
         for (let i = 0; i < children.length; i++) {

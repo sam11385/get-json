@@ -29,6 +29,7 @@ import { FlickrService } from './services/flickr.service';
 import { WeatherService } from './services/weather.service';
 import { RedditService } from './services/reddit.service';
 
+// Routing
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: FlickrComponent},
   { path: 'random-user', component: RandomUserComponent },
@@ -39,6 +40,8 @@ const routes: Routes = [
   { path: 'weather', component: WeatherComponent  }
   //{ path: '**'} Catchall - like your 404
 ];
+
+export const routedComponents = [RandomUserComponent, NewsComponent, ZomatoComponent, RedditComponent];
 
 @NgModule({
   declarations: [
@@ -73,5 +76,3 @@ const routes: Routes = [
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
-export const routedComponents = [RandomUserComponent, NewsComponent, ZomatoComponent, RedditComponent];

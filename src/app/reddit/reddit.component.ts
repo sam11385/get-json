@@ -1,7 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Http, Response } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
+import { Http } from '@angular/http';
 import { RedditService } from '../services/reddit.service';
 import { Post } from './post';
 
@@ -12,7 +10,7 @@ import { Post } from './post';
 })
 export class RedditComponent implements OnInit {
 
-  @Input('subreddit') subreddit: string;
+  @Input('subreddit') subreddit:string;
 
   posts: Post[];
 

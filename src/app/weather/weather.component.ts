@@ -23,6 +23,7 @@ export class WeatherComponent implements OnInit {
     // const utcSeconds = this.theWeather.sys.sunrise;
     // const d = new Date(0);
     // d.setUTCSeconds(utcSeconds);
+
   }
 
   ngOnInit() {

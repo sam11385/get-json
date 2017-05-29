@@ -7,15 +7,16 @@ import { WeatherModel, WeatherDetails, WeatherInfo, Sys } from '../weather/weath
 
 @Injectable()
 export class WeatherService {
-  result$: Observable<string[]>;
+  //result$: Observable<string[]>;
 
-  constructor(private http: Http) {
-  }
+  constructor(private http: Http) {}
   getWeather(zip):Observable<WeatherModel>{
     const appid = '6ba9fe7b01ace29efd87f6336dcd299b';
     const url = 'http://api.openweathermap.org/data/2.5/weather?zip='+zip+',us&appid='+appid+'';
     return this.http.get(url)
                     .map(response => response.json() as WeatherModel);
   }
+
+  
 
 }
