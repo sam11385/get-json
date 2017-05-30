@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Http } from '@angular/http';
+import { StocksService } from '../services/stocks.service';
+import { Stocks } from './stocks';
 
 @Component({
   selector: 'app-stocks',

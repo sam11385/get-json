@@ -28,6 +28,7 @@ import { NewsApiService } from './services/news-api.service';
 import { FlickrService } from './services/flickr.service';
 import { WeatherService } from './services/weather.service';
 import { RedditService } from './services/reddit.service';
+import { StocksService } from './services/stocks.service';
 
 // Routing
 const routes: Routes = [
@@ -72,7 +73,7 @@ export const routedComponents = [RandomUserComponent, NewsComponent, ZomatoCompo
     MaterialModule
   ],
   exports: [RouterModule],
-  providers: [NewsApiService, FlickrService, WeatherService, RedditService],
+  providers: [NewsApiService, FlickrService, WeatherService, RedditService, StocksService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
