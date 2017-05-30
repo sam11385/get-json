@@ -38,7 +38,8 @@ const routes: Routes = [
   { path: 'zomato', component: ZomatoComponent },
   { path: 'reddit', component: RedditComponent },
   { path: 'flickr', component: FlickrComponent },
-  { path: 'weather', component: WeatherComponent  }
+  { path: 'weather', component: WeatherComponent },
+  { path: 'stocks', component: StocksComponent }
   //{ path: '**'} Catchall - like your 404
 ];
 
