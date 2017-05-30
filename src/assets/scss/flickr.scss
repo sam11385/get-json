@@ -1,5 +1,4 @@
 app-flickr {
-    
     .cards {
         @include flex(row, wrap);
         justify-content: space-between;
