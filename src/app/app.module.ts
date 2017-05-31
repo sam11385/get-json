@@ -29,6 +29,7 @@ import { FlickrService } from './services/flickr.service';
 import { WeatherService } from './services/weather.service';
 import { RedditService } from './services/reddit.service';
 import { StocksService } from './services/stocks.service';
+import { StocksListComponent } from './stocks/stocks-list/stocks-list.component';
 
 // Routing
 const routes: Routes = [
@@ -60,7 +61,8 @@ export const routedComponents = [RandomUserComponent, NewsComponent, ZomatoCompo
     UntappdComponent,
     TvComponent,
     RedditComponent,
-    FlickrComponent
+    FlickrComponent,
+    StocksListComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
