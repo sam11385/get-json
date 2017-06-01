@@ -1,4 +1,4 @@
-export class Stocks {
+interface Stocks {
   name: string;
   symbol: string;
   lastPrice: number;
