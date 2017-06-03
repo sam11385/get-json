@@ -19,6 +19,7 @@ import { CarsComponent } from './cars/cars.component';
 import { NytimesComponent } from './nytimes/nytimes.component';
 import { WeatherComponent } from './weather/weather.component';
 import { StocksComponent } from './stocks/stocks.component';
+import { StocksListComponent } from './stocks/stocks-list/stocks-list.component';
 import { UntappdComponent } from './untappd/untappd.component';
 import { TvComponent } from './tv/tv.component';
 import { RedditComponent } from './reddit/reddit.component';
@@ -29,7 +30,6 @@ import { FlickrService } from './services/flickr.service';
 import { WeatherService } from './services/weather.service';
 import { RedditService } from './services/reddit.service';
 import { StocksService } from './services/stocks.service';
-import { StocksListComponent } from './stocks/stocks-list/stocks-list.component';
 
 // Routing
 const routes: Routes = [
