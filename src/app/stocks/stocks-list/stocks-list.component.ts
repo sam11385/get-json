@@ -11,7 +11,7 @@ import { Stocks } from '../stocks';
 })
 export class StocksListComponent {
 
-  constructor(private http: Http, stocks: Stocks) { 
+  constructor(private http: Http, stocksService:StocksService) { 
     this.getStocks()
   }
 
@@ -20,7 +20,5 @@ export class StocksListComponent {
   getStocks() {
     
   }
-
-  
 
 }
