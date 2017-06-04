@@ -15,10 +15,12 @@ export class StocksListComponent {
     this.getStocks()
   }
 
-  //private stocks:Stocks[] = [];
+  private stocks:Stocks[] = [];
 
   getStocks() {
-        
+    
   }
+
+  
 
 }
