@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import { Stocks } from '../stocks/stocks';
@@ -9,7 +9,7 @@ export class StocksService {
 
   constructor(private http:Http) { }
   getStocks(symbol):Observable<Stocks>{
-    const stockUrl = 'http://dev.markitondemand.com/MODApis/Api/v2/Quote/jsonp?symbol='+symbol+'&callback=?';
+    const stockUrl = 'http://dev.markitondemand.com/MODApis/Api/v2/Quote/jsonp?symbol='+symbol+'';
     return this.http.get(stockUrl)
                     .map(response => response.json() as Stocks);
   }

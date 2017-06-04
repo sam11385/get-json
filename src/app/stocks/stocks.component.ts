@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Http } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
 import { StocksService } from '../services/stocks.service';
 import { Stocks } from './stocks';
 
@@ -11,13 +11,12 @@ import { Stocks } from './stocks';
 })
 export class StocksComponent implements OnInit {
   
-  stocks: any;
   theStocks: Stocks;
 
-  constructor(private http: Http, stocks: StocksService) { }
+  constructor(private stocks: StocksService) {}
 
   ngOnInit() {
-    const dks = 'dks';
+    const dks = 'DKS';
     this.stocks.getStocks(dks)
                 .subscribe(response => this.theStocks = response);
   }
