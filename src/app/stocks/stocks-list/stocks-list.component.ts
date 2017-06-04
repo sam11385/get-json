@@ -1,24 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 import { StocksService } from '../../services/stocks.service';
-import { Stocks } from '../stocks';
+import {Stocks} from '../stocks';
 
 @Component({
   selector: 'app-stocks-list',
   templateUrl: './stocks-list.component.html',
-  styleUrls: ['./stocks-list.component.scss'],
-  providers: [Stocks]
+  styleUrls: ['./stocks-list.component.scss']
 })
 export class StocksListComponent {
 
-  constructor(private http: Http, stocksService:StocksService) { 
-    this.getStocks()
-  }
+  // theStocks: Stocks;
 
-  private stocks:Stocks[] = [];
+  // constructor(private http: Http, stocks: StocksService) { }
 
-  getStocks() {
-    
-  }
+  // ngOnInit() {
+  //   this.stocks.getStocks('dks')
+  //               .subscribe(response => this.theStocks = response);
+  // }
 
 }

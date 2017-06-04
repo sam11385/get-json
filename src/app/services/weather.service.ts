@@ -7,7 +7,6 @@ import { WeatherModel, WeatherDetails, WeatherInfo, Sys } from '../weather/weath
 
 @Injectable()
 export class WeatherService {
-  //result$: Observable<string[]>;
 
   constructor(private http: Http) {}
   getWeather(zip):Observable<WeatherModel>{

@@ -12,6 +12,7 @@ import { WeatherModel, WeatherDetails, WeatherInfo, Sys } from './weather';
 export class WeatherComponent implements OnInit {
 
   theWeather: WeatherModel;
+  // Save this for later
   searchControl = new FormControl();
 
   constructor(private weather:WeatherService, private FormBuilder: FormBuilder) { 
