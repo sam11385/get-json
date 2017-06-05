@@ -13,7 +13,9 @@ export class StocksComponent implements OnInit {
   
   theStocks: Stocks;
 
-  constructor(private stocks: StocksService) {}
+  constructor(private stocks: StocksService) {
+    console.log();
+  }
 
   ngOnInit() {
     const dks = 'DKS';
