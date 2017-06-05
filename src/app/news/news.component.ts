@@ -4,15 +4,10 @@ import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { NewsApiService } from '../services/news-api.service';
 
-// import fade in animation
-import { fadeInAnimation } from '../_animations/index';
-
 @Component({
   selector: 'app-news',
   templateUrl: './news.component.html',
-  styleUrls: ['./news.component.css'],
-  animations: [fadeInAnimation],
-  host: { '[@fadeInAnimation]': ''}
+  styleUrls: ['./news.component.css']
 })
 export class NewsComponent implements OnInit {
 

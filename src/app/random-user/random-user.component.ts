@@ -2,14 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { Router, ActivatedRoute } from '@angular/router';
-import { fadeInAnimation } from '../_animations/index';
 
 @Component({
   selector: 'app-random-user',
   templateUrl: './random-user.component.html',
   styleUrls: ['./random-user.component.css'],
-  animations: [fadeInAnimation],
-  host: { '[@fadeInAnimation]': '' }
 })
 export class RandomUserComponent implements OnInit {
   private users = [];
