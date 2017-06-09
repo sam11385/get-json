@@ -10,7 +10,7 @@ import { Post } from './post';
 })
 export class RedditComponent implements OnInit {
 
-  @Input() subreddit: string = 'r/gunners';
+  @Input() subreddit = 'r/gunners';
 
   posts: Post[];
 

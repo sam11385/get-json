@@ -10,7 +10,7 @@ import { Stocks } from './stocks';
   styleUrls: ['./stocks.component.scss']
 })
 export class StocksComponent implements OnInit {
-  
+
   theStocks: Stocks;
 
   constructor(private stocks: StocksService) {

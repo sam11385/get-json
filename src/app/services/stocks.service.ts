@@ -8,7 +8,7 @@ import { Stocks } from '../stocks/stocks';
 export class StocksService {
 
   constructor(private jsonp: Jsonp) { }
-  getStocks(symbol):Observable<Stocks>{
+  getStocks(symbol): Observable<Stocks>{
     const stockUrl = 'http://dev.markitondemand.com/MODApis/Api/v2/Quote/jsonp?symbol=AAPL&callback=JSONP_CALLBACK';
     return this.jsonp.get(stockUrl)
                     .map(response => response.json() as Stocks);

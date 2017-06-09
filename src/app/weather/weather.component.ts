@@ -15,7 +15,7 @@ export class WeatherComponent implements OnInit {
   // Save this for later
   searchControl = new FormControl();
 
-  constructor(private weather:WeatherService, private FormBuilder: FormBuilder) { 
+  constructor(private weather: WeatherService, private FormBuilder: FormBuilder) {
     // const temp = this.theWeather.main.temp;
     // function ToFahrenheit() {
     //   return (this.theWeather.main.temp - 273) * 9 / 5 + 32;
